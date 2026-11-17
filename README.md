@@ -54,9 +54,10 @@ Then open http://localhost:5173. Opening `index.html` directly from disk also wo
 
 ## Things to fill in
 
-- **Email and LinkedIn**: `hello@harshitaprasad.com` and `linkedin.com/in/harshitaprasad`
-  are placeholders. They appear in `index.html` (footer) and `work/index.html` (About, top left).
-- **Résumé**: the About page links to `assets/resume.pdf`. Put your PDF there with that name.
+- **Email and LinkedIn**: `harshittaprasad@gmail.com` and `linkedin.com/in/harshita-prasad-6304032a7`
+  are live. They appear in `index.html` (footer) and `work/index.html` (About, top left).
+- **Résumé**: the About page links to `assets/resume.pdf` (Harshita's one-page CV). Replace that file
+  to update it, keeping the name.
 - **The photo**: `assets/img/portrait.jpg`. To change it, replace the file and bump
   the `?v=` on its `<img>` in `work/index.html`.
 
