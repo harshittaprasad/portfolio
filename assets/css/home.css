@@ -1,0 +1,248 @@
+/* ==========================================================================
+   Home: the black cover.
+   "welcome to my / portfolio" in the serif, the small print in three corners,
+   and a lot of dark in between.
+   ========================================================================== */
+
+.cover {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: calc(var(--vh) * 100);
+  padding: var(--pad);
+  padding-bottom: max(var(--pad), calc(var(--vh) * 6));
+  overflow: hidden;
+}
+
+/* ---------- Title ----------
+   Centred in the page. When the game starts (html.is-game) it is drawn up
+   to --title-top, near the top, and slides back down when the game stops. */
+
+.cover__title {
+  --title-top: calc(var(--pad) + var(--vh) * 4);
+  position: absolute;
+  left: var(--pad);
+  right: var(--pad);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: min(14.4vw, calc(var(--vh) * 27));
+  line-height: .84;
+  letter-spacing: -.022em;
+  text-align: center;
+  font-kerning: normal;
+  font-feature-settings: "liga", "dlig";
+  transition: top 1.1s cubic-bezier(.76, 0, .24, 1), transform 1.1s cubic-bezier(.76, 0, .24, 1);
+}
+html.is-game .cover__title { top: var(--title-top); transform: translateY(0); }
+
+.cover__a,
+.cover__b { display: block; white-space: nowrap; }
+
+.cover__b {
+  position: relative;
+  margin-top: .02em;
+  /* nudge right so "portfolio" plus its year sits centred as one unit */
+  padding-left: .3em;
+}
+.cover__b em {
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: -.01em;
+}
+
+.cover__year {
+  position: relative;
+  top: -3.25em;
+  margin-left: .35em;
+  font-family: var(--font-serif);
+  font-size: .135em;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: .01em;
+  line-height: 0;
+  vertical-align: baseline;
+  color: var(--fg);
+}
+
+/* ---------- Corners ---------- */
+
+.cover__foot {
+  grid-row: 2;
+  align-self: end;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: 24px;
+}
+.cover__col--left { display: grid; gap: 1.3em; }
+.cover__col--right { justify-self: end; text-align: right; }
+
+.cover__foot a { transition: color .4s ease; }
+
+/* ---------- Small screens ---------- */
+
+@media (max-aspect-ratio: 4/5) {
+  /* portrait: a larger title, and in the game it stops lower, with more air above it */
+  .cover__title {
+    --title-top: calc(var(--pad) + var(--vh) * 20);
+    font-size: 15.5vw;
+  }
+}
+
+@media (max-width: 640px) {
+  .cover__foot {
+    grid-template-columns: 1fr auto;
+    row-gap: 2.4em;
+  }
+  .cover__col--left { grid-column: 1 / -1; }
+  .cover__col--mid { justify-self: start; }
+}
+
+/* ==========================================================================
+   The game (game.js). "( Play now )" in the footer opens a round of Fruit
+   Ninja over the cover; the title fades back into the dark and the fruit is
+   thrown up through it. While it runs the button reads "( ● Stop )".
+   ========================================================================== */
+
+/* the footer button sits above the game canvas so it can always stop it */
+.cover__col--mid { position: relative; z-index: 25; }
+
+.play {
+  appearance: none;
+  margin: -12px -8px;
+  padding: 12px 8px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.play:hover .u::after,
+.play:focus-visible .u::after { transform: scaleX(1); transform-origin: left center; }
+
+.play__dot {
+  display: none;
+  width: 6px; height: 6px;
+  margin: 0 .6em .14em 0;
+  border-radius: 50%;
+  background: var(--ochre);
+  vertical-align: middle;
+}
+.play.is-on .play__dot { display: inline-block; animation: play-dot 1.4s ease-in-out infinite; }
+@keyframes play-dot { 50% { opacity: .25; } }
+
+/* once the game has been opened, the cover fades in and out of it without
+   its entrance delays; while it runs, everything but the button steps back */
+html.has-played .cover [data-reveal] {
+  transition: opacity .7s var(--ease), filter .7s var(--ease), transform .7s var(--ease);
+}
+html.is-game .cover [data-reveal]:not(.cover__col--mid) { opacity: .07; pointer-events: none; }
+/* the title fades only once it has finished rising, so the lift is seen */
+html.is-game .cover__title [data-reveal] { transition-delay: .9s; }
+html.is-game, html.is-game body { user-select: none; -webkit-user-select: none; }
+
+.game {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .6s ease, visibility 0s linear .6s;
+}
+.is-game .game { visibility: visible; opacity: 1; transition: opacity .6s ease; }
+
+.game__canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.is-game .game__canvas { pointer-events: auto; touch-action: none; }
+
+/* ---------- Score, best and the three strikes, top left ---------- */
+
+.game__hud {
+  position: absolute;
+  top: var(--pad);
+  left: var(--pad);
+  transition: opacity .5s ease;
+}
+.game.is-over .game__hud { opacity: 0; }
+
+.game__score {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(56px, 7.4vw, 112px);
+  line-height: .78;
+  letter-spacing: -.02em;
+  font-variant-numeric: lining-nums;
+  transform-origin: 0 100%;
+}
+.game__score.is-bump { animation: game-bump .4s var(--ease); }
+@keyframes game-bump { from { transform: scale(1.08); } }
+
+.game__best { margin-top: 1.1em; }
+
+.game__strikes { display: flex; align-items: center; gap: 9px; margin-top: 1em; }
+.game__strikes li { color: var(--fg-2); opacity: .45; transition: color .3s ease, opacity .3s ease; }
+.game__strikes svg { display: block; width: 11px; height: 11px; overflow: visible; }
+.game__strikes li:nth-child(2) svg { width: 13px; height: 13px; }
+.game__strikes li:nth-child(3) svg { width: 15px; height: 15px; }
+.game__strikes path { fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
+.game__strikes li.is-lost { color: var(--ochre); opacity: 1; animation: game-strike .5s var(--ease); }
+@keyframes game-strike { from { transform: scale(1.9); } }
+
+/* ---------- First-round hint ---------- */
+
+.game__hint {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  color: var(--fg-2);
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.game.is-hint .game__hint { opacity: 1; }
+
+/* ---------- Game over ---------- */
+
+.game__over {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--pad);
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .6s var(--ease), visibility 0s linear .6s;
+}
+.game.is-over .game__over { opacity: 1; visibility: visible; transition: opacity 1s var(--ease) .1s; }
+
+.game__title {
+  margin: .22em 0 .32em;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: min(13vw, calc(var(--vh) * 22));
+  line-height: .9;
+  letter-spacing: -.02em;
+}
+.game__result b { font-weight: 500; }
+.game__new { display: none; color: var(--ochre); }
+.game.is-best .game__new { display: inline; }
+.game__close { margin-top: 2.6em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cover__title { transition: none; }
+  html.is-game .cover__title [data-reveal] { transition-delay: 0s; }
+  .play.is-on .play__dot, .game__score.is-bump, .game__strikes li.is-lost { animation: none; }
+}

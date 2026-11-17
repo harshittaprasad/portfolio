@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- One project poster at 1320 x 750, built by ../assets/js/posters.js.
+     Open poster.html?p=flowledger (or zineps, inclusivity, companions);
+     add &play to watch it move. render.sh screenshots the still of each one. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/css/posters.css">
+<style>
+  html, body { margin: 0; background: #0B0B0A; }
+  .frame { position: relative; width: 1320px; height: 750px; overflow: hidden; }
+</style>
+</head><body>
+<div class="frame" id="frame"></div>
+<script>
+  const q = new URLSearchParams(location.search);
+  document.getElementById('frame').dataset.poster = q.get('p') || 'flowledger';
+</script>
+<script src="../assets/js/posters.js"></script>
+<script>
+  // &play: keep it moving, to watch it here
+  if (q.has('play')) document.querySelector('.poster').ctl.play();
+</script>
+</body></html>

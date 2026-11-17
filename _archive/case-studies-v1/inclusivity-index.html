@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en" class="page-case">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Redesigning Inclusivity | Harshita Prasad</title>
+  <meta name="description" content="Redesigning Inclusivity: a research paper on neuroinclusive UX for adults with OCD, Tourette's, sensory processing differences and anxiety, and the E-DUX framework it proposes. By Harshita Prasad.">
+  <meta name="theme-color" content="#0C0C0B">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Fragment+Mono&display=swap">
+  <link rel="stylesheet" href="../../assets/css/base.css?v=94">
+  <link rel="stylesheet" href="../../assets/css/case.css?v=6">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <header class="site-header micro">
+    <a class="u" href="../../" data-nav>Harshita Prasad</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="u" href="../#projects" aria-current="page">Work</a>
+      <a class="u" href="../#about">About</a>
+    </nav>
+  </header>
+
+  <!-- REDESIGNING INCLUSIVITY. A summary of the research paper, which is linked
+       in full at the end (assets/docs/redesigning-inclusivity.pdf). Everything
+       here follows the paper; its results section describes expected results,
+       so this page does too. Role and methods in .case__meta are a best reading;
+       change them if they're not right. -->
+  <main class="case">
+
+    <div class="case__head">
+      <div>
+        <p class="case__eyebrow mono" data-reveal style="--d:150">Research paper&ensp;·&ensp;Neuroinclusive UX</p>
+        <h1 class="case__title" data-reveal style="--d:250; font-size: clamp(58px, 8.2vw, 132px)">Redesigning<br>Inclusivity</h1>
+      </div>
+      <p class="case__lede" data-reveal style="--d:450">How adults with OCD, Tourette’s, sensory processing differences and anxiety experience digital products, and a framework for designing calmer ones.</p>
+    </div>
+
+    <dl class="case__meta" data-reveal style="--d:600">
+      <div><dt class="mono">Role</dt><dd>UX research</dd></div>
+      <div><dt class="mono">Type</dt><dd>Research paper</dd></div>
+      <div><dt class="mono">Year</dt><dd>2026</dd></div>
+      <div><dt class="mono">Methods</dt><dd>Interviews, card sorting, co-design</dd></div>
+    </dl>
+
+    <figure class="shot shot--hero" data-reveal style="--d:750">
+      <img src="../../assets/img/projects/inclusivity/hero.jpg" width="2000" height="1250" alt="Pages of the research paper “Redesigning Inclusivity” fanned out on a soft lilac background." fetchpriority="high">
+      <figcaption class="mono">The paper, eight pages</figcaption>
+    </figure>
+
+    <!-- 01 -->
+    <section class="block" data-view aria-labelledby="overview">
+      <p class="block__label mono" data-reveal>01&ensp;—&ensp;Overview</p>
+      <div class="block__body">
+        <h2 id="overview" data-reveal style="--d:100">Inclusive design that looks past the usual two diagnoses.</h2>
+        <p data-reveal style="--d:200">Most research on neuroinclusive UX centres on autism and ADHD, usually in education. This paper looks at the adults it tends to leave out, people with OCD, Tourette’s, sensory processing differences and the anxiety that often comes with them, and at the everyday, high-stakes places they meet friction: healthcare portals, work software and online checkouts.</p>
+        <p data-reveal style="--d:280">It argues for an evidence-based approach led by empathy rather than a deficit model, and treats neurodiversity as a source of better design for everyone.</p>
+        <div data-reveal style="--d:360">
+          <ul class="chips" aria-label="Neurotypes">
+            <li class="chip chip--on">Autism</li>
+            <li class="chip chip--on">ADHD</li>
+            <li class="chip chip--gap">OCD</li>
+            <li class="chip chip--gap">Tourette’s</li>
+            <li class="chip chip--gap">Dyspraxia</li>
+            <li class="chip chip--gap">Sensory processing</li>
+            <li class="chip chip--gap">Anxiety</li>
+          </ul>
+          <p class="chips-key mono"><span>Where most research looks</span><span class="is-gap">Who this paper centres</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section class="block" data-view aria-labelledby="gap">
+      <p class="block__label mono" data-reveal>02&ensp;—&ensp;The gap</p>
+      <div class="block__body">
+        <h2 id="gap" data-reveal style="--d:100">Usable isn’t the same as comfortable.</h2>
+        <ul class="points">
+          <li data-reveal style="--d:200"><strong>A narrow focus.</strong> Guidelines built around attention and executive function miss needs like endless re-checking with OCD, or interfaces that punish accidental clicks with Tourette’s.</li>
+          <li data-reveal style="--d:280"><strong>Compliance isn’t comfort.</strong> WCAG sets the baseline, but says nothing about whether an experience feels safe and calm to use. The question has to move from “is this usable?” to “is this comfortable and welcoming?”</li>
+          <li data-reveal style="--d:360"><strong>Nothing measures sensory stress.</strong> Usability testing barely touches sensory or emotional comfort, so there’s no standard way to show that sensory-friendly design helps.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section class="block block--wide" data-view aria-labelledby="method">
+      <p class="block__label mono" data-reveal>03&ensp;—&ensp;Method</p>
+      <div class="block__body">
+        <h2 id="method" data-reveal style="--d:100">Neurodivergent adults as co-designers, not test subjects.</h2>
+        <p data-reveal style="--d:200">A mixed-methods study with formal IRB approval and emotional safety built in: decompression breaks were always there, and anyone could pause or leave an activity at any time, to avoid cognitive or sensory overload.</p>
+
+        <div class="cards" data-reveal style="--d:280">
+          <div class="card"><span class="card__big">25</span><p>adults, 18 and over</p></div>
+          <div class="card"><span class="card__big">5</span><p>neurotypes: autism, ADHD, OCD, Tourette’s and sensory processing disorder</p></div>
+          <div class="card"><span class="card__big">3</span><p>research phases, from listening to co-designing</p></div>
+        </div>
+
+        <article class="decision">
+          <h3 data-reveal>Three phases</h3>
+          <div class="cards" data-reveal style="--d:100">
+            <div class="card">
+              <span class="mono">Phase 1</span>
+              <h4>In-depth interviews</h4>
+              <p>Moments where digital experiences break down, especially in high-stakes settings: sensory triggers, and how the “just right” feeling of something being complete shows up online.</p>
+            </div>
+            <div class="card">
+              <span class="mono">Phase 2</span>
+              <h4>Card sorting</h4>
+              <p>Real interface pieces from e-commerce and healthcare sites, grouped by what felt urgent, actionable or less draining. Participants’ mental models didn’t match how developers usually organise them.</p>
+            </div>
+            <div class="card">
+              <span class="mono">Phase 3</span>
+              <h4>Co-design and testing</h4>
+              <p>Together, participants redesigned a classic pain point, a clunky multi-step application form, and the prototype was tested against the original.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="decision">
+          <h3 data-reveal>Measuring what people feel</h3>
+          <div class="cards" data-reveal style="--d:100">
+            <div class="card">
+              <span class="mono">Cognitive comfort</span>
+              <h4>Modified NASA-TLX</h4>
+              <p>Mental demand, effort and, above all, frustration and anxiety after each task.</p>
+            </div>
+            <div class="card">
+              <span class="mono">Sensory load</span>
+              <h4>Sensory Overload Scale</h4>
+              <p>A custom five-point self-report of distress from specific sights, sounds or movement, before and after each task.</p>
+            </div>
+            <div class="card">
+              <span class="mono">Emotional safety</span>
+              <h4>A one-question anxiety scale</h4>
+              <p>A quick visual scale to catch shifts in how people felt right before and after difficult moments.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 04 -->
+    <section class="block block--wide" data-view aria-labelledby="findings">
+      <p class="block__label mono" data-reveal>04&ensp;—&ensp;Findings</p>
+      <div class="block__body">
+        <h2 id="findings" data-reveal style="--d:100">Finishing a task isn’t the same as being fine.</h2>
+        <p data-reveal style="--d:200">The paper expects people to complete their tasks on both versions of the form, but the original to leave them far more drained, with markedly higher NASA-TLX and Sensory Overload scores than the co-designed prototype (p&nbsp;&lt;&nbsp;.01). The friction is real even when nothing visibly fails: it’s an invisible mental toll.</p>
+
+        <article class="decision">
+          <h3 data-reveal>What the interviews and tests pointed to</h3>
+          <div class="cards" data-reveal style="--d:100">
+            <div class="card">
+              <span class="mono">OCD and Tourette’s</span>
+              <h4>Uncertainty is the frustration</h4>
+              <p>Clear, always-visible status and quick ways to undo, so no one gets stuck double-checking everything.</p>
+            </div>
+            <div class="card">
+              <span class="mono">Sensory processing</span>
+              <h4>Motion spikes stress</h4>
+              <p>Spinning carousels and flashing alerts drive distress up. Interfaces need a way to turn off all non-essential motion, not just a mute button.</p>
+            </div>
+            <div class="card">
+              <span class="mono">ADHD and autism</span>
+              <h4>Actions first</h4>
+              <p>People wanted to see what they could do, Pay, Edit, View, rather than dig for it in categories like “Preferences”.</p>
+            </div>
+          </div>
+        </article>
+
+        <blockquote class="quote" data-reveal>
+          “The problem sits in the design, not the person.”
+          <cite class="mono">From the discussion</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- 05 -->
+    <section class="block block--wide" data-view aria-labelledby="framework">
+      <p class="block__label mono" data-reveal>05&ensp;—&ensp;The framework</p>
+      <div class="block__body">
+        <h2 id="framework" data-reveal style="--d:100">E&#8209;DUX, the Empathy-Driven UX framework.</h2>
+        <p data-reveal style="--d:200">Everything the study heard comes together in three principles for calmer, more flexible digital products.</p>
+
+        <div class="cards" data-reveal style="--d:280">
+          <div class="card">
+            <span class="mono">01</span>
+            <h4>Predictable pacing and control</h4>
+            <p>People set the pace: no timed sessions on important forms, auto-save that just works, undo and exit buttons you can’t miss, and status that says where you are, like “Step 3 of 5”.</p>
+            <p class="card__who mono">For OCD, Tourette’s, executive function and anxiety</p>
+          </div>
+          <div class="card">
+            <span class="mono">02</span>
+            <h4>Sensory sanctuary</h4>
+            <p>No surprise sounds or flashing lights. Let people turn off unnecessary animation, switch to gentle colours and adjust density, like bigger text or more space between lines.</p>
+            <p class="card__who mono">For sensory processing, autism and Tourette’s</p>
+          </div>
+          <div class="card">
+            <span class="mono">03</span>
+            <h4>Adaptive information density</h4>
+            <p>Information in small, logical groups of three to five, collapsible sections so nothing overwhelms, and action labels tested with real people rather than guessed.</p>
+            <p class="card__who mono">For ADHD, autism and executive function</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 -->
+    <section class="block" data-view aria-labelledby="everyone">
+      <p class="block__label mono" data-reveal>06&ensp;—&ensp;For everyone</p>
+      <div class="block__body">
+        <h2 id="everyone" data-reveal style="--d:100">Designing for the edges improves the middle.</h2>
+        <p data-reveal style="--d:200">The paper argues these aren’t special add-ons. Turning off parallax and flashing alerts lowers sensory load for everyone, including people with vestibular issues, anyone working under stress, and people on mobile. Chunking information to what working memory can hold, about four items at a time, makes a dashboard easier for anyone to skim in a hurry.</p>
+        <p data-reveal style="--d:280">What starts as a neurodivergent need becomes a new standard for clarity.</p>
+      </div>
+    </section>
+
+    <!-- 07 -->
+    <section class="block" data-view aria-labelledby="next">
+      <p class="block__label mono" data-reveal>07&ensp;—&ensp;What comes next</p>
+      <div class="block__body">
+        <h2 id="next" data-reveal style="--d:100">From early evidence to everyday practice.</h2>
+        <ul class="points">
+          <li data-reveal style="--d:200"><strong>Scale and time.</strong> Twenty-five participants give rich detail and early proof, not the whole picture. Next is E&#8209;DUX in a large company or healthcare system, tracking fatigue and frustration over months rather than one session.</li>
+          <li data-reveal style="--d:280"><strong>A standard measure.</strong> Validating the Sensory Overload Scale against established emotional and sensory tools, so it’s ready for industry-wide use.</li>
+          <li data-reveal style="--d:360"><strong>Across cultures.</strong> Testing how ideas about urgency, predictability and information structure translate across languages and cultures.</li>
+        </ul>
+        <p class="case__live" data-reveal style="--d:300"><a class="u" href="../../assets/docs/redesigning-inclusivity.pdf" target="_blank" rel="noopener">Read the full paper&thinsp;(PDF)&thinsp;↗</a></p>
+      </div>
+    </section>
+
+    <nav class="case__end micro" aria-label="Projects">
+      <a class="u" href="../#projects">←&ensp;Back to projects</a>
+      <a class="u" href="#top" data-top>Back to top&ensp;↑</a>
+    </nav>
+  </main>
+
+  <script src="../../assets/js/site.js?v=91" defer></script>
+  <script src="../../assets/js/page.js?v=92" defer></script>
+  <script>
+    // "Back to top"
+    document.querySelector('[data-top]').addEventListener('click', (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); });
+  </script>
+</body>
+</html>

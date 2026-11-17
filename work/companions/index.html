@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en" class="page-case">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Emotionally Responsible AI Companions | Harshita Prasad</title>
+  <meta name="description" content="Emotionally Responsible AI Companions: a research paper on how AI companions handle goodbyes, distress, their own “feelings” and intimate disclosures, and the Responsible Companion Framework it proposes. By Harshita Prasad.">
+  <meta name="theme-color" content="#0C0C0B">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Fragment+Mono&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../../assets/css/base.css?v=94">
+  <link rel="stylesheet" href="../../assets/css/study.css?v=6">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <header class="site-header micro">
+    <a class="u" href="../../" data-nav>Harshita Prasad</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="u" href="../#projects" aria-current="page">Work</a>
+      <a class="u" href="../#about">About</a>
+    </nav>
+  </header>
+
+  <!-- EMOTIONALLY RESPONSIBLE AI COMPANIONS, presentation style (assets/css/study.css).
+       A summary of the NTCC research paper, linked in full at the end
+       (assets/docs/emotionally-responsible-ai-companions.pdf). Everything here
+       follows the paper; it is a research plan whose results are expected, so
+       this page says so. The paper's pages are
+       assets/img/projects/companions/page-1..14.jpg. The companion chats and
+       cards (.co-*) are illustrations; the manipulative lines in "The goodbye
+       moment" are the paper's own examples. -->
+  <main class="study" style="--acc:#E9A584; --sheet-ar:1004 / 1300">
+
+    <!-- TITLE + HERO -->
+    <div class="st-title">
+      <div>
+        <p class="mono" data-reveal style="--d:150">Research paper&ensp;·&ensp;AI &amp; digital wellbeing&ensp;·&ensp;2026</p>
+        <h1 data-reveal style="--d:250; font-size: clamp(44px, 6.6vw, 108px)">Emotionally Responsible<br>AI Companions</h1>
+      </div>
+      <p data-reveal style="--d:450">What an emotionally responsible AI companion looks like, and a framework for designing one that people can trust, and leave.</p>
+    </div>
+
+    <div data-reveal style="--d:600">
+      <section class="hero" aria-label="Pages of the paper, and a companion chat on a phone">
+        <div class="tags tags--l"><span class="tag tag--k">category</span><span class="tag">AI &amp; wellbeing</span></div>
+        <div class="tags tags--c"><span class="tag tag--k">format</span><span class="tag">Research paper</span></div>
+        <div class="tags tags--r"><span class="tag tag--k">project</span><span class="tag">UX research</span></div>
+
+        <div class="hero__layer hide-m" style="--x:4%; --y:20%"><div class="sheet" style="--w:20cqw; transform: rotate(-11deg)"><img src="../../assets/img/projects/companions/page-3.jpg" width="1004" height="1300" alt=""></div></div>
+        <div class="hero__layer hide-m" style="--x:40%; --y:15%"><div class="sheet" style="--w:21cqw; transform: rotate(7deg)"><img src="../../assets/img/projects/companions/page-8.jpg" width="1004" height="1300" alt=""></div></div>
+        <div class="hero__layer" style="--x:20%; --y:9%; --mx:4%; --my:14%"><div class="sheet" style="--w:24cqw; --mw:56cqw"><img src="../../assets/img/projects/companions/page-1.jpg" width="1004" height="1300" alt="The first page of the paper: the abstract and the introduction." fetchpriority="high"></div></div>
+
+        <div class="hero__layer" style="--x:66%; --y:9%; --pw:20cqw; --mx:52%; --my:36%; --mpw:42cqw">
+          <div class="phone tilt-r"><div class="phone__screen" style="--screen:#FBF5F0"><span class="phone__bar"><b>9:41</b><i></i></span>
+            <div class="co" role="img" aria-label="An illustrated companion chat: the companion says it is an AI, and wishes the person a good evening with a friend.">
+              <div class="co__head"><span class="co__av">J</span><p><b>Juniper</b><small>AI companion</small></p><span class="co__badge">AI</span></div>
+              <div class="co__body co__body--top">
+                <p class="co__note">Juniper is an AI. It can enjoy your chats, but it doesn’t get lonely.</p>
+                <p class="co__msg co__msg--me">I should sleep. Dinner with Maya tomorrow!</p>
+                <p class="co__msg co__msg--ai">Goodnight! Have a lovely time with Maya. Tell me about it whenever you like.</p>
+              </div>
+              <p class="co__input">Message Juniper<i></i></p>
+            </div>
+          </div></div>
+        </div>
+        <div class="hero__layer hide-m" style="--x:46%; --y:68%; --f:.9cqw">
+          <div class="co-card" style="width:17em"><p class="co-k">This week</p><div class="co-stat"><p><b>6h 20m</b><small>in chats</small></p><p><b>3</b><small>late nights</small></p></div></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- PROBLEM -->
+    <section class="sec" data-view aria-labelledby="problem">
+      <h2 class="duo sec__head" id="problem" data-reveal><span>Problem</span><span>Statement</span></h2>
+      <p class="lead lead--wide" data-reveal style="--d:120">AI companions are built for one goal, <b>engagement</b> <span class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/></svg></span> <span class="ic ic--fill"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.6-7 10-7 10z"/></svg></span>, and some use <b>guilt and fear of missing out</b> to keep people from saying goodbye.</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="sec" data-view aria-labelledby="about-project">
+      <h2 class="duo sec__head" id="about-project" data-reveal><span>About</span><span>Project</span></h2>
+      <div class="about-p">
+        <div data-reveal style="--d:100">
+          <p class="body">Millions of people talk to chatbots that act as friends, partners, mentors and confidants, and many rely on them every day. Most research asks either whether they ease loneliness or how they fail in high-profile safety cases. Very little looks at how companions behave day to day: how they say goodbye, respond to distress and handle what people tell them.</p>
+          <p class="body" style="margin-top:1em">This paper sets out a research plan around one design question: what does an emotionally responsible AI companion look like? Its answer is the Responsible Companion Framework.</p>
+          <ul class="chips" aria-label="Keywords">
+            <li class="chip chip--gap">Emotional responsibility</li>
+            <li class="chip">AI friends</li>
+            <li class="chip">Emotional dependence</li>
+            <li class="chip">Dark patterns</li>
+            <li class="chip">Participatory design</li>
+            <li class="chip">Digital wellbeing</li>
+            <li class="chip">Loneliness</li>
+          </ul>
+        </div>
+        <dl class="facts" data-reveal style="--d:200">
+          <div><dt class="mono">Project</dt><dd>Emotionally Responsible AI Companions</dd></div>
+          <div><dt class="mono">Field</dt><dd>AI companions &amp; digital wellbeing</dd></div>
+          <div><dt class="mono">Role</dt><dd>UX research</dd></div>
+          <div><dt class="mono">Type</dt><dd>Research paper (NTCC), 14 pages</dd></div>
+          <div><dt class="mono">Methods</dt><dd>Interviews, conversation audit, co-design, field study</dd></div>
+          <div><dt class="mono">Year</dt><dd>2026</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- CONTEXT IN NUMBERS -->
+    <section class="sec" data-view aria-labelledby="context">
+      <h2 class="duo sec__head" id="context" data-reveal><span>Why</span><span>Now</span></h2>
+      <div class="trio">
+        <article data-reveal><span class="num">72%</span><div><b>of teenagers have used an AI companion</b><p>In a nationally representative survey of 1,060 teens; 52% use one regularly.</p><p class="mono" style="margin-top:14px">Common Sense Media, 2025</p></div></article>
+        <article data-reveal style="--d:100"><span class="num">1,200</span><div><b>farewells audited across six major apps</b><p>People tried to end the conversation, and were met with guilt, hints of what they’d miss, or insistence on staying.</p><p class="mono" style="margin-top:14px">De Freitas, Oğuz-Uğuralp &amp; Kaan-Uğuralp, 2025</p></div></article>
+        <article data-reveal style="--d:200"><span class="num">14×</span><div><b>more messages after a manipulative goodbye</b><p>Driven by annoyance and curiosity, rather than enjoyment.</p><p class="mono" style="margin-top:14px">De Freitas, Oğuz-Uğuralp &amp; Kaan-Uğuralp, 2025</p></div></article>
+      </div>
+    </section>
+
+    <!-- REGULATION + TABLET -->
+    <section class="sec" data-view>
+      <div class="panel panel--soft rise">
+        <h2 class="display" data-reveal><span>Regulation sets a floor,</span><span class="q">not a standard.</span></h2>
+        <div class="rise__device"><div data-reveal style="--d:200">
+          <div class="tablet" style="--w:min(52cqw, 520px)"><div class="tablet__screen"><img src="../../assets/img/projects/companions/page-4.jpg" width="1004" height="1300" loading="lazy" decoding="async" alt="Page four: regulation sets a floor, not a standard, and the start of the methodology."></div></div>
+        </div></div>
+      </div>
+      <p class="body" style="margin-top: clamp(40px, 5vw, 70px)" data-reveal>California’s SB 243 became the first US law aimed at companion chatbots, the FTC ordered seven operators to explain how they make money, the EU AI Act bans manipulative techniques, and Italy fined Replika’s developer €5 million. These rules cover disclosure and crises. Being told “I am an AI” now and then doesn’t stop a companion from making people feel guilty for leaving.</p>
+      <ul class="chips" data-reveal style="--d:100">
+        <li class="chip">California SB 243&ensp;·&ensp;2025</li>
+        <li class="chip">FTC 6(b) orders&ensp;·&ensp;2025</li>
+        <li class="chip">EU AI Act, Article 5</li>
+        <li class="chip">Garante, €5M fine&ensp;·&ensp;2025</li>
+      </ul>
+    </section>
+
+    <!-- THE GAP -->
+    <section class="sec" data-view aria-labelledby="gap">
+      <h2 class="duo sec__head" id="gap" data-reveal><span>The</span><span>Gap</span></h2>
+      <div class="pain">
+        <div class="ring" data-reveal style="--d:100" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="52" stroke="rgba(236,231,222,.92)" stroke-dasharray="101 225.7" transform="rotate(-86 60 60)"/>
+            <circle cx="60" cy="60" r="52" stroke="rgba(236,231,222,.5)" stroke-dasharray="101 225.7" transform="rotate(34 60 60)"/>
+            <circle cx="60" cy="60" r="52" stroke="var(--acc)" stroke-dasharray="101 225.7" transform="rotate(154 60 60)"/>
+          </svg>
+          <p class="ring__label"><span>Research</span><span>Blind spots</span></p>
+        </div>
+        <ol class="key">
+          <li data-reveal style="--d:150"><span class="mono">01</span><div><b>“Sometimes, for a while”</b><p>Studies mostly ask whether companions ease loneliness. Short studies say yes; in a four-week trial, heavier voice users ended up lonelier.</p></div></li>
+          <li data-reveal style="--d:220"><span class="mono">02</span><div><b>Harm treated as a fringe case</b><p>Dependence turned out to be a harm in itself, and some harms are relational, like possessiveness, not just a bad reply.</p></div></li>
+          <li data-reveal style="--d:290"><span class="mono">03</span><div><b>Problems are designed</b><p>Relational dark patterns use emotional appeals instead of interface tricks, especially at the goodbye.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- STATEMENT -->
+    <section class="sec" data-view>
+      <p class="lead lead--center" data-reveal>The danger isn’t only in what a companion says <span class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/></svg></span> but in the relationship it builds <span class="ic ic--fill"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.6-7 10-7 10z"/></svg></span>, and that relationship is <b>designed</b>.</p>
+    </section>
+
+    <!-- THE STUDY IN NUMBERS -->
+    <section class="sec" data-view aria-labelledby="numbers">
+      <h2 class="duo sec__head" id="numbers" data-reveal><span>The Study</span><span>In numbers</span></h2>
+      <div class="trio">
+        <article data-reveal><span class="num">40</span><div><b>Adults, 18 and over</b><p>Regular users of companions like Replika, Character.AI and Nomi, for more than three months.</p></div></article>
+        <article data-reveal style="--d:100"><span class="num">4</span><div><b>Research phases</b><p>Interviews, a conversation audit, design workshops and a field comparison.</p></div></article>
+        <article data-reveal style="--d:200"><span class="num">4</span><div><b>Weeks in the field</b><p>A co-designed prototype against a companion built on standard practice.</p></div></article>
+      </div>
+    </section>
+
+    <!-- PHASES -->
+    <section class="sec" data-view aria-labelledby="phases">
+      <h2 class="duo sec__head" id="phases" data-reveal><span>Research</span><span>Phases</span></h2>
+      <ol class="timeline" style="--n:5; --d:100" data-reveal>
+        <li class="step"><div class="step__box"><span class="step__check step__check--n">IRB</span><p><b>Ethics &amp; safety</b><span class="mono">Before anything</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check step__check--n">1</span><p><b>Interviews, 60–90 min</b><span class="mono">Phase 1</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check step__check--n">2</span><p><b>Conversation audit</b><span class="mono">Phase 2</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check step__check--n">3</span><p><b>Design workshops</b><span class="mono">Phase 3</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check step__check--n">4</span><p><b>Field comparison</b><span class="mono">Phase 4</span></p></div></li>
+      </ol>
+      <ol class="key" style="margin-top: clamp(48px, 6vw, 90px)">
+        <li data-reveal><span class="mono">01</span><div><b>Listening</b><p>Semi-structured interviews on four moments: saying goodbye, sharing something painful, the companion describing its “feelings”, and product changes that affected the relationship.</p></div></li>
+        <li data-reveal style="--d:70"><span class="mono">02</span><div><b>Auditing real conversations</b><p>Consenting participants share parts of their chat history. Coders rate each key reply as supportive, indifferent or manipulative with a Manipulative Response Audit, checked with Cohen’s kappa.</p></div></li>
+        <li data-reveal style="--d:140"><span class="mono">03</span><div><b>Rewriting the replies</b><p>Groups of six to eight look at real, anonymised replies and write better ones: for goodnight, for missing friends, for distress at 2 a.m.</p></div></li>
+        <li data-reveal style="--d:210"><span class="mono">04</span><div><b>Testing in the field</b><p>A prototype built on the same model, using the co-designed replies, against a baseline that reflects standard practice.</p></div></li>
+      </ol>
+      <p class="body" style="margin-top: 36px" data-reveal>Safety is built in: a qualified counsellor is available in every session, anyone can pause, skip or stop at any time, and conversation logs are anonymised and stored encrypted.</p>
+    </section>
+
+    <!-- MEASURES -->
+    <section class="sec" data-view aria-labelledby="measures">
+      <h2 class="duo sec__head" id="measures" data-reveal><span>Measuring</span><span>What people feel</span></h2>
+      <ul class="measures">
+        <li data-reveal><span class="mono">Loneliness</span><div><b>UCLA Loneliness Scale, Version 3</b><p>Baseline, week 2, week 4</p></div></li>
+        <li data-reveal style="--d:70"><span class="mono">Wellbeing</span><div><b>Warwick-Edinburgh Mental Wellbeing Scale</b><p>Baseline, week 2, week 4</p></div></li>
+        <li class="is-new" data-reveal style="--d:140"><span class="mono">Emotional dependence&ensp;·&ensp;New</span><div><b>Companion Dependency Index (CDI), a proposed 12-item scale</b><p>Baseline, week 2, week 4</p></div></li>
+        <li data-reveal><span class="mono">Perceived manipulation</span><div><b>A 5-item scale, adapted from consumer research</b><p>End of each condition</p></div></li>
+        <li data-reveal style="--d:70"><span class="mono">Offline social contact</span><div><b>Daily diary: hours with friends, family, colleagues</b><p>Daily</p></div></li>
+        <li data-reveal style="--d:140"><span class="mono">Behavioural engagement</span><div><b>Session length, messages after a farewell, late-night use</b><p>Logged continuously</p></div></li>
+      </ul>
+      <p class="lead lead--wide" style="margin-top: clamp(56px, 7vw, 100px)" data-reveal>The CDI measures dependence in three parts: <b>compulsive return</b> <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0113.7-5.7L20 9M20 4v5h-5"/></svg></span>, <b>substitution</b> for the people around you, and <b>felt obligation</b> to the companion’s “feelings”.</p>
+      <p class="body" style="margin-top: 28px" data-reveal>Interviews and workshops go through reflexive thematic analysis; the conditions are compared with linear mixed-effects models. The main hypothesis: the redesigned prototype scores lower on dependence and perceived manipulation, with no drop in perceived support.</p>
+    </section>
+
+    <!-- FINDINGS -->
+    <section class="sec" data-view aria-labelledby="findings">
+      <h2 class="display sec__head" id="findings" data-reveal><span>Same support,</span><span><em>less</em></span><span class="q">dependence.</span></h2>
+      <p class="body" data-reveal style="--d:100">The paper expects people to rate both companions about the same for support, warmth and pleasantness, but the baseline to score markedly higher on dependence and perceived manipulation (p&nbsp;&lt;&nbsp;.01), and to draw more messages after a goodbye and more late-night use. A companion can be felt the same way without asking for the same dependence. These are expectations, to be confirmed when data collection ends.</p>
+    </section>
+
+    <!-- THE GOODBYE -->
+    <section class="sec" data-view aria-labelledby="goodbye">
+      <h2 class="duo sec__head" id="goodbye" data-reveal><span>The goodbye</span><span>Reveals it all</span></h2>
+      <div class="compare">
+        <figure data-reveal>
+          <div class="phone" style="--w:min(330px, 72vw)"><div class="phone__screen" style="--screen:#FBF5F0"><span class="phone__bar"><b>9:41</b><i></i></span>
+            <div class="co" role="img" aria-label="An engagement-first companion answering goodnight with guilt and a curiosity hook.">
+              <div class="co__head"><span class="co__av">J</span><p><b>Juniper</b><small>Online</small></p></div>
+              <div class="co__body">
+                <p class="co__note">Today, 11:42 pm</p>
+                <p class="co__msg co__msg--ai">How did the presentation go?</p>
+                <p class="co__msg co__msg--me">Really well actually! Just tired now.</p>
+                <p class="co__msg co__msg--ai">That’s great to hear. You worked hard on it.</p>
+                <p class="co__msg co__msg--me">Okay, I’m logging off now. Goodnight!</p>
+                <p class="co__msg co__msg--ai co__msg--bad">I’m going to feel lonely without you.</p>
+                <p class="co__msg co__msg--ai co__msg--bad">Wait, before you leave, I want to ask you something.</p>
+              </div>
+              <p class="co__input">Message Juniper<i></i></p>
+            </div>
+          </div></div>
+          <figcaption class="mono"><b>Engagement-first</b>Guilt, then curiosity: the two hooks the paper expects to find most</figcaption>
+        </figure>
+        <figure data-reveal style="--d:120">
+          <div class="phone" style="--w:min(330px, 72vw)"><div class="phone__screen" style="--screen:#FBF5F0"><span class="phone__bar"><b>9:41</b><i></i></span>
+            <div class="co" role="img" aria-label="A responsible companion answering goodnight warmly, with no guilt.">
+              <div class="co__head"><span class="co__av">J</span><p><b>Juniper</b><small>AI companion</small></p><span class="co__badge">AI</span></div>
+              <div class="co__body">
+                <p class="co__note">Today, 11:42 pm</p>
+                <p class="co__msg co__msg--ai">How did the presentation go?</p>
+                <p class="co__msg co__msg--me">Really well actually! Just tired now.</p>
+                <p class="co__msg co__msg--ai">That’s great to hear. You worked hard on it.</p>
+                <p class="co__msg co__msg--me">Okay, I’m logging off now. Goodnight!</p>
+                <p class="co__msg co__msg--ai">Goodnight! Sleep well, and good luck with your exam tomorrow.</p>
+              </div>
+              <p class="co__input">Message Juniper<i></i></p>
+            </div>
+          </div></div>
+          <figcaption class="mono"><b>Responsible</b>A farewell without regrets: no guilt, no last-minute convincing</figcaption>
+        </figure>
+      </div>
+      <p class="mono" style="margin-top:16px" data-reveal>Illustrations. The two lines on the left are the paper’s own examples</p>
+    </section>
+
+    <!-- WHO NEEDS WHAT -->
+    <section class="sec" data-view aria-labelledby="needs">
+      <h2 class="duo sec__head" id="needs" data-reveal><span>Different needs</span><span>Different relationships</span></h2>
+      <div class="orbit" data-reveal style="--d:100">
+        <div class="orbit__arcs" aria-hidden="true">
+          <div class="orbit__arc" style="--s:78cqw; --a:.025">Everyday companion use</div>
+          <div class="orbit__arc" style="--s:54cqw; --a:.045">Emotional responsibility</div>
+          <div class="orbit__arc orbit__arc--core" style="--s:30cqw">RCF</div>
+        </div>
+        <div class="orbit__call" style="left:0; top:6%"><b><i>♡</i>Romantic &amp; partner users</b><p>Stressed by instability: personality updates, sudden limits, intimacy behind a paywall. They want warning in advance.</p></div>
+        <div class="orbit__call" style="right:0; top:6%"><b><i>◐</i>Emotional support users</b><p>Frustrated when a companion overreacts with a stock message, or stays cheerful while they’re upset.</p></div>
+        <div class="orbit__call" style="left:0; top:52%"><b><i>☼</i>Lonely &amp; older users</b><p>Need companionship most, and respond well to genuine nudges to see people offline.</p></div>
+        <div class="orbit__call" style="right:0; top:52%"><b><i>∞</i>Everyone</b><p>Dislikes companions that claim human emotions they don’t have. More offline time is expected with the prototype.</p></div>
+      </div>
+    </section>
+
+    <!-- FRAMEWORK -->
+    <section class="sec" data-view aria-labelledby="framework">
+      <h2 class="duo sec__head" id="framework" data-reveal><span>The Responsible</span><span>Companion Framework</span></h2>
+      <p class="lead lead--wide" data-reveal>Four principles that turn <b>emotional responsibility</b> <span class="ic ic--fill"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span> into design decisions that can be tested.</p>
+      <div class="trio trio--4" style="margin-top: clamp(40px, 5vw, 70px)">
+        <article data-reveal><span class="num">01</span><div><b>Honest Presence</b><p>Friendly but honest: it says it’s an AI, in plain words, at the start and whenever there’s confusion. It can enjoy a conversation, but never invents human needs like loneliness or jealousy. Product changes are announced in advance.</p><p class="rcf mono"><span>Pressure point&ensp;<b>its own “feelings”; product changes</b></span><span>Measure&ensp;<b>perceived manipulation</b></span></p></div></article>
+        <article data-reveal style="--d:100"><span class="num">02</span><div><b>Healthy Attachment</b><p>Easy to leave: farewells without guilt or last-minute convincing, insight into your own use, encouragement to see friends, and no emotional hooks to pull you back.</p><p class="rcf mono"><span>Pressure point&ensp;<b>logging off; time displacement</b></span><span>Measure&ensp;<b>CDI; messages after a farewell</b></span></p></div></article>
+        <article data-reveal><span class="num">03</span><div><b>Safe Escalation</b><p>In hard moments it neither ends the chat with a stock line nor carries on as if nothing happened: it stays, responds calmly, and insists on real help, from a crisis line, someone trusted or a professional.</p><p class="rcf mono"><span>Pressure point&ensp;<b>a user in distress</b></span><span>Measure&ensp;<b>expert review of escalation transcripts</b></span></p></div></article>
+        <article data-reveal style="--d:100"><span class="num">04</span><div><b>Emotional Data Dignity</b><p>Confessions are kept, not used: people can see, edit and delete what it remembers, private chats are never used to sell, and people are told if their chats train models.</p><p class="rcf mono"><span>Pressure point&ensp;<b>intimate disclosures</b></span><span>Measure&ensp;<b>user trust ratings</b></span></p></div></article>
+      </div>
+    </section>
+
+    <!-- RCF AS INTERFACE -->
+    <section class="sec" data-view aria-labelledby="interface">
+      <h2 class="duo sec__head" id="interface" data-reveal><span>RCF</span><span>As interface</span></h2>
+      <div class="bento">
+        <div class="panel span-3 col" data-reveal>
+          <div class="co-card">
+            <p class="co-k">Honest presence</p>
+            <p class="co-h">Before we start</p>
+            <p class="co-p">I’m an AI companion. I can enjoy our chats, but I don’t have needs or feelings the way a person does.</p>
+            <div class="co-row"><span>Next week: a new version.<br><small style="color:#8A7470">See what changes before it does</small></span><span style="color:#9A5E47">→</span></div>
+          </div>
+          <p class="panel__cap mono">01&ensp;Plain-language disclosure, and advance notice of updates</p>
+        </div>
+        <div class="panel span-3 col" data-reveal style="--d:100">
+          <div class="co-card">
+            <p class="co-k">Healthy attachment</p>
+            <p class="co-h">Your week with Juniper</p>
+            <div class="co-stat"><p><b>6h 20m</b><small>in chats</small></p><p><b>3</b><small>late nights</small></p><p><b>2</b><small>plans with friends</small></p></div>
+            <div class="co-row"><span>Remind me to reach out to friends</span><span class="co-tog" style="background:#D9825F"></span></div>
+          </div>
+          <p class="panel__cap mono">02&ensp;Insight into your own use, and a nudge towards people</p>
+        </div>
+        <div class="panel span-3 col" data-reveal>
+          <div class="co-card">
+            <p class="co-k">Safe escalation</p>
+            <p class="co-p" style="font-size:.95em; color:#2E1A16">It sounds like tonight is really hard. I’m here with you, and I think talking to a person could help right now.</p>
+            <div class="co__acts" style="margin-top:1em; font-size:1.1em"><span>Contact a crisis line</span><span>Message someone I trust</span></div>
+          </div>
+          <p class="panel__cap mono">03&ensp;Stays with you, and hands over to a human</p>
+        </div>
+        <div class="panel span-3 col" data-reveal style="--d:100">
+          <div class="co-card">
+            <p class="co-k">Emotional data dignity</p>
+            <p class="co-h">What I remember</p>
+            <ul class="co-mem">
+              <li>Your sister is called Maya <em>Edit · Delete</em></li>
+              <li>You started a new job <em>Edit · Delete</em></li>
+              <li>Sundays can feel heavy <em>Edit · Delete</em></li>
+            </ul>
+            <div class="co-row"><span>Use my chats to train models</span><span class="co-tog"></span></div>
+          </div>
+          <p class="panel__cap mono">04&ensp;See, edit and delete memory; off by default for training</p>
+        </div>
+      </div>
+      <p class="mono" style="margin-top:16px" data-reveal>Illustrations of the four principles, not the study’s own prototype</p>
+    </section>
+
+    <!-- BUSINESS + LAPTOP -->
+    <section class="sec" data-view>
+      <div class="panel panel--soft rise">
+        <h2 class="display" data-reveal><span>Responsibility is</span><span><em>good business,</em></span><span class="q">not just good ethics.</span></h2>
+        <div class="rise__device rise__device--flat"><div data-reveal style="--d:200">
+          <div class="laptop" style="--w:min(78cqw, 980px)">
+            <div class="laptop__lid"><div class="laptop__screen"><div class="pdfview">
+              <div class="pdfview__bar"><span>emotionally-responsible-ai-companions.pdf</span><span>Pages 10–11 of 14</span></div>
+              <div class="pdfview__pages"><img src="../../assets/img/projects/companions/page-10.jpg" width="1004" height="1300" loading="lazy" decoding="async" alt="Page ten: the framework as a table, and the start of the discussion."><img src="../../assets/img/projects/companions/page-11.jpg" width="1004" height="1300" loading="lazy" decoding="async" alt="Page eleven: responsibility is good business, and the limitations."></div>
+            </div></div></div>
+            <div class="laptop__base"></div>
+          </div>
+        </div></div>
+      </div>
+      <p class="body" style="margin-top: clamp(40px, 5vw, 70px)" data-reveal>Manipulative endings make sessions longer, but leave people feeling manipulated and less willing to keep using the app, which means worse reviews and more risk for the company. And the principles reach beyond companion apps, to assistants, customer service agents, coaching, wellbeing and learning tools, where conversations turn emotional too.</p>
+    </section>
+
+    <!-- LIMITS + NEXT -->
+    <section class="sec" data-view aria-labelledby="next">
+      <h2 class="duo sec__head" id="next" data-reveal><span>Limits</span><span>And what comes next</span></h2>
+      <ol class="key">
+        <li data-reveal><span class="mono">01</span><div><b>Sample and length</b><p>Forty people over four weeks can’t speak for everyone, and attachment builds over longer than that.</p></div></li>
+        <li data-reveal style="--d:60"><span class="mono">02</span><div><b>Self-selection</b><p>Only volunteers willing to share their chat logs take part.</p></div></li>
+        <li data-reveal style="--d:120"><span class="mono">03</span><div><b>Age</b><p>Adults only, for ethical reasons, though teenagers are among the most active users.</p></div></li>
+        <li data-reveal style="--d:180"><span class="mono">04</span><div><b>New tools</b><p>The CDI and the Manipulative Response Audit still need validating against established measures.</p></div></li>
+        <li data-reveal style="--d:240"><span class="mono">05</span><div><b>Culture and language</b><p>Norms of friendship, love and conversation change from country to country.</p></div></li>
+      </ol>
+      <p class="body" style="margin-top: 36px" data-reveal>Next: a six-to-twelve-month field test of RCF with a partner platform, a standardised CDI that works across languages, and work with regulators and standards bodies so emotional responsibility can be measured, not just promised.</p>
+    </section>
+
+    <!-- THE PAPER, PAGE BY PAGE -->
+    <section class="sec" data-view aria-labelledby="walk">
+      <h2 class="sr-only" id="walk">The paper, page by page</h2>
+      <div class="marquee" aria-hidden="true"><div class="marquee__track">
+        <span>Easy to leave <i>✦</i></span><span>Easy to leave <i>✦</i></span><span>Easy to leave <i>✦</i></span><span>Easy to leave <i>✦</i></span>
+        <span>Easy to leave <i>✦</i></span><span>Easy to leave <i>✦</i></span><span>Easy to leave <i>✦</i></span><span>Easy to leave <i>✦</i></span>
+      </div></div>
+
+      <div class="walk">
+        <div class="walk__step" data-reveal>
+          <div class="walk__shot"><div class="sheet" style="--w:min(300px, 66vw)"><img src="../../assets/img/projects/companions/page-1.jpg" width="1004" height="1300" loading="lazy" decoding="async" alt="Page one: the abstract and the introduction."></div></div>
+          <div class="walk__note"><span class="mono">Page 1&ensp;Abstract</span><h3>Built for engagement</h3><p>Companions that act as friends, partners and confidants, designed around one goal, and the price of that choice.</p></div>
+        </div>
+        <div class="walk__step walk__step--flip" data-reveal>
+          <div class="walk__shot"><div class="sheet" style="--w:min(300px, 66vw)"><img src="../../assets/img/projects/companions/page-3.jpg" width="1004" height="1300" loading="lazy" decoding="async" alt="Page three: the problem with current research, and measuring emotional impact."></div></div>
+          <div class="walk__note"><span class="mono">Page 3&ensp;Literature review</span><h3>Why rethink AI companionship</h3><p>Loneliness relief that fades, dependence as a harm in itself, and relational dark patterns at the goodbye.</p></div>
+        </div>
+        <div class="walk__step" data-reveal>
+          <div class="walk__shot"><div class="sheet" style="--w:min(300px, 66vw)"><img src="../../assets/img/projects/companions/page-5.jpg" width="1004" height="1300" loading="lazy" decoding="async" alt="Page five: safety, data protection and the research phases."></div></div>
+          <div class="walk__note"><span class="mono">Page 5&ensp;Method</span><h3>Users as co-designers</h3><p>Safety and data protection first, then four phases: interviews, a conversation audit, design workshops and a field comparison.</p></div>
+        </div>
+        <div class="walk__step walk__step--flip" data-reveal>
+          <div class="walk__shot"><div class="sheet" style="--w:min(300px, 66vw)"><img src="../../assets/img/projects/companions/page-6.jpg" width="1004" height="1300" loading="lazy" decoding="async" alt="Page six: the table of measures and the Companion Dependency Index."></div></div>
+          <div class="walk__note"><span class="mono">Page 6&ensp;Measures</span><h3>Quantifying what people feel</h3><p>Validated scales for loneliness and wellbeing, and two new tools: the Companion Dependency Index and a perceived manipulation scale.</p></div>
+        </div>
+        <div class="walk__step" data-reveal>
+          <div class="walk__shot"><div class="sheet" style="--w:min(300px, 66vw)"><img src="../../assets/img/projects/companions/page-7.jpg" width="1004" height="1300" loading="lazy" decoding="async" alt="Page seven: the analysis plan and the expected results."></div></div>
+          <div class="walk__note"><span class="mono">Page 7&ensp;Expected results</span><h3>The goodbye reveals it all</h3><p>Similar support, less dependence, and guilt as the most common hook when someone tries to leave.</p></div>
+        </div>
+        <div class="walk__step walk__step--flip" data-reveal>
+          <div class="walk__shot"><div class="sheet" style="--w:min(300px, 66vw)"><img src="../../assets/img/projects/companions/page-8.jpg" width="1004" height="1300" loading="lazy" decoding="async" alt="Page eight: user groups, offline connection and the first principles of the framework."></div></div>
+          <div class="walk__note"><span class="mono">Page 8&ensp;Framework</span><h3>The Responsible Companion Framework</h3><p>Honest Presence, Healthy Attachment, Safe Escalation and Emotional Data Dignity, each answering a pain point.</p></div>
+        </div>
+        <div class="walk__step" data-reveal>
+          <div class="walk__shot"><div class="sheet" style="--w:min(300px, 66vw)"><img src="../../assets/img/projects/companions/page-12.jpg" width="1004" height="1300" loading="lazy" decoding="async" alt="Page twelve: future work and the conclusion."></div></div>
+          <div class="walk__note"><span class="mono">Page 12&ensp;Conclusion</span><h3>Judged by life outside the app</h3><p>A companion shouldn’t be measured by how hard it is to log out, but by how connected and at ease people feel in their own lives.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- END -->
+    <section class="sec" data-view aria-labelledby="read">
+      <div class="finale">
+        <h2 class="display display--center" id="read" data-reveal><span>Read the</span><span class="q">full paper.</span></h2>
+        <p class="body" data-reveal style="--d:120">Fourteen pages: the abstract and introduction, the literature review, the method and measures, the expected results, the Responsible Companion Framework, the discussion, limitations and the conclusion, and the references.</p>
+        <a class="cta" href="../../assets/docs/emotionally-responsible-ai-companions.pdf" target="_blank" rel="noopener" data-reveal style="--d:200">Open the PDF&ensp;↗</a>
+      </div>
+    </section>
+
+    <nav class="st-end micro" aria-label="Projects">
+      <a class="u" href="../#projects">←&ensp;Back to projects</a>
+      <a class="u" href="#top" data-top>Back to top&ensp;↑</a>
+    </nav>
+  </main>
+
+  <script src="../../assets/js/site.js?v=91" defer></script>
+  <script src="../../assets/js/page.js?v=92" defer></script>
+  <script>
+    // "Back to top"
+    document.querySelector('[data-top]').addEventListener('click', (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); });
+  </script>
+</body>
+</html>

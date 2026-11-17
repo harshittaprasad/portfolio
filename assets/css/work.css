@@ -1,0 +1,232 @@
+/* ==========================================================================
+   Work: one folder in the middle of the page. Opened (work.js), it gives way
+   to the projects: a big "projects" top left with a line on the right, then
+   a two-column grid of covers, each with its name and a few tags below.
+   ========================================================================== */
+
+.work {
+  --font-mono: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  position: relative;
+  min-height: calc(var(--vh) * 100);
+  padding: calc(var(--pad) + 112px) var(--pad) calc(var(--pad) + 72px);
+}
+
+/* ---------- the folder ---------- */
+
+/* It fills the first screen and sits in its middle until it is opened. */
+.desk { display: none; }
+.js .desk {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 3;
+  height: calc(var(--vh) * 100);
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.desk.is-gone { display: none; }
+
+.desk__folder {
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: clamp(84px, 7.4vw, 120px);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--fg);
+  font: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: opacity .45s ease, scale .7s var(--ease);
+}
+.desk.is-away .desk__folder { opacity: 0; scale: .86; pointer-events: none; }
+
+.desk__art {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 120 / 96;
+  perspective: 320px;
+}
+.desk__back,
+.desk__front {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, .5));
+}
+
+/* the front panel swings open towards you, hinged at its bottom edge */
+.desk__front {
+  transform-origin: 50% 92.7%;
+  transition: transform .6s var(--ease);
+}
+
+/* four sheets, one per project, tucked behind the front panel */
+.desk__sheet {
+  position: absolute;
+  left: 18%;
+  top: 31%;
+  width: 64%;
+  height: auto;
+  aspect-ratio: 660 / 375;
+  object-fit: cover;
+  border: 1.5px solid #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .35);
+  transition: transform .65s var(--ease);
+  transition-delay: calc(var(--i) * 45ms);
+}
+
+.desk__label { white-space: nowrap; transition: color .3s ease, opacity .3s ease; }
+
+/* pointing at it: the flap tips forward and the papers peek out */
+@media (hover: hover) {
+  .desk__folder:not(.is-open):hover .desk__front { transform: rotateX(-14deg); }
+  .desk__folder:not(.is-open):hover .desk__sheet {
+    transform: translate(calc(var(--fx) * .12), calc(-24% - (3 - var(--i)) * 7%)) rotate(calc(var(--fr) * .35));
+  }
+  .desk__folder:not(.is-open):hover .desk__label { color: var(--ochre); }
+}
+
+/* opened: the flap falls open and the sheets rise out and fan */
+.desk__folder.is-open .desk__front { transform: rotateX(-62deg); }
+.desk__folder.is-open .desk__sheet {
+  transform: translate(var(--fx), calc(-122% - (3 - var(--i)) * 5%)) rotate(var(--fr));
+}
+.desk__folder.is-open .desk__label { opacity: 0; }
+
+/* ---------- the projects ---------- */
+
+.shelf { position: relative; z-index: 4; }
+.js .shelf { display: none; }
+.js .work.is-open .shelf { display: block; }
+
+.shelf__head {
+  position: relative;
+  z-index: 1;               /* the tail of the "j" dips onto the first picture */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.shelf__title {
+  margin-left: -.05em;
+  font-family: var(--font-sans);
+  font-size: clamp(64px, 6.7vw, 104px);
+  font-weight: 600;
+  line-height: .9;
+  letter-spacing: -.045em;
+  outline: none;
+}
+
+.shelf__lede {
+  max-width: 300px;
+  margin-bottom: .95em;
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  line-height: 1.3;
+  text-align: right;
+}
+
+/* title and line rise in as the folder gives way */
+.js .work.is-open .shelf__head > * { opacity: 0; transform: translateY(18px); }
+.js .work.is-shown .shelf__head > * {
+  opacity: 1;
+  transform: none;
+  transition: opacity .9s var(--ease) .15s, transform 1.1s var(--ease) .15s;
+}
+.js .work.is-shown .shelf__lede { transition-delay: .3s; }
+
+.shelf__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px clamp(20px, 2.8vw, 40px);
+  margin: 0;
+}
+
+.proj__link { display: block; }
+
+.proj__media {
+  position: relative;
+  display: block;
+  aspect-ratio: 660 / 375;
+  overflow: hidden;
+  background: #1A1917;
+}
+.proj__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease), filter .6s ease;
+}
+/* Pointing at a project turns its picture into a grainy black-and-white
+   negative, like an exposure: the picture is inverted to grey, darkened and
+   given more contrast, and a layer of fine noise is laid over it (overlay
+   blend, so the mid-greys get speckled and pure black and white stay clean).
+   The numbers were measured from the reference. */
+.proj__media { isolation: isolate; }
+.proj__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='g' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncR type='linear' slope='1.15' intercept='-.075'/><feFuncG type='linear' slope='1.15' intercept='-.075'/><feFuncB type='linear' slope='1.15' intercept='-.075'/><feFuncA type='linear' slope='0' intercept='1'/></feComponentTransfer></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
+  background-size: 240px 240px;
+  mix-blend-mode: overlay;
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+@media (hover: hover) {
+  .proj__link:hover .proj__media img {
+    transform: scale(1.035);
+    filter: grayscale(1) invert(1) brightness(.735) contrast(1.546);
+  }
+  .proj__link:hover .proj__media::after { opacity: 1; }
+}
+.proj__link:focus-visible .proj__media img { filter: grayscale(1) invert(1) brightness(.735) contrast(1.546); }
+.proj__link:focus-visible .proj__media::after { opacity: 1; }
+
+.proj__meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin-top: 14px;
+}
+.proj__name {
+  font-family: var(--font-sans);
+  font-size: clamp(22px, 1.85vw, 27px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+}
+.proj__tags {
+  font-family: var(--font-mono);
+  font-size: 11.2px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+/* ---------- phones ---------- */
+
+@media (max-width: 640px) {
+  .work { padding-top: calc(var(--pad) + 92px); }
+  .shelf__head { flex-direction: column-reverse; align-items: stretch; gap: 44px; }
+  .shelf__lede { align-self: flex-end; max-width: 240px; margin: 0; }
+  .shelf__grid { grid-template-columns: 1fr; row-gap: 36px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desk__front, .desk__sheet, .desk__folder, .proj__media img { transition: none; }
+}

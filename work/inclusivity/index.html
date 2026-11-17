@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en" class="page-case">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Redesigning Inclusivity | Harshita Prasad</title>
+  <meta name="description" content="Redesigning Inclusivity: a research paper on neuroinclusive UX for adults with OCD, Tourette's, sensory processing differences and anxiety, and the E-DUX framework it proposes. By Harshita Prasad.">
+  <meta name="theme-color" content="#0C0C0B">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Fragment+Mono&display=swap">
+  <link rel="stylesheet" href="../../assets/css/base.css?v=94">
+  <link rel="stylesheet" href="../../assets/css/study.css?v=6">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <header class="site-header micro">
+    <a class="u" href="../../" data-nav>Harshita Prasad</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="u" href="../#projects" aria-current="page">Work</a>
+      <a class="u" href="../#about">About</a>
+    </nav>
+  </header>
+
+  <!-- REDESIGNING INCLUSIVITY, presentation style (assets/css/study.css).
+       A summary of the research paper, linked in full at the end
+       (assets/docs/redesigning-inclusivity.pdf). Everything here follows the
+       paper; its results section describes expected results, so this page does
+       too. The paper's pages are assets/img/projects/inclusivity/page-1..8.jpg.
+       The calm interface cards (.ed-*) draw the E-DUX principles as examples;
+       they are illustrations, not the study's own prototype. -->
+  <main class="study" style="--acc:#B7AEE0">
+
+    <!-- TITLE + HERO -->
+    <div class="st-title">
+      <div>
+        <p class="mono" data-reveal style="--d:150">Research paper&ensp;·&ensp;Neuroinclusive UX&ensp;·&ensp;2026</p>
+        <h1 data-reveal style="--d:250; font-size: clamp(50px, 7.4vw, 120px)">Redesigning<br>Inclusivity</h1>
+      </div>
+      <p data-reveal style="--d:450">How adults with OCD, Tourette’s, sensory processing differences and anxiety experience digital products, and a framework for designing calmer ones.</p>
+    </div>
+
+    <div data-reveal style="--d:600">
+      <section class="hero" aria-label="Pages of the paper, fanned out">
+        <div class="tags tags--l"><span class="tag tag--k">category</span><span class="tag">Neuroinclusive UX</span></div>
+        <div class="tags tags--c"><span class="tag tag--k">format</span><span class="tag">Research paper</span></div>
+        <div class="tags tags--r"><span class="tag tag--k">project</span><span class="tag">UX research</span></div>
+
+        <div class="hero__layer hide-m" style="--x:3%; --y:24%"><div class="sheet" style="--w:20cqw; transform: rotate(-14deg)"><img src="../../assets/img/projects/inclusivity/page-3.jpg" width="919" height="1300" alt=""></div></div>
+        <div class="hero__layer hide-m" style="--x:77%; --y:24%"><div class="sheet" style="--w:20cqw; transform: rotate(14deg)"><img src="../../assets/img/projects/inclusivity/page-6.jpg" width="919" height="1300" alt=""></div></div>
+        <div class="hero__layer" style="--x:18%; --y:14%; --mx:2%; --my:18%"><div class="sheet" style="--w:22cqw; --mw:44cqw; transform: rotate(-6deg)"><img src="../../assets/img/projects/inclusivity/page-2.jpg" width="919" height="1300" alt=""></div></div>
+        <div class="hero__layer" style="--x:60%; --y:14%; --mx:54%; --my:18%"><div class="sheet" style="--w:22cqw; --mw:44cqw; transform: rotate(6deg)"><img src="../../assets/img/projects/inclusivity/page-5.jpg" width="919" height="1300" alt=""></div></div>
+        <div class="hero__layer" style="--x:37.5%; --y:9%; --mx:22%; --my:12%"><div class="sheet" style="--w:25cqw; --mw:56cqw"><img src="../../assets/img/projects/inclusivity/page-1.jpg" width="919" height="1300" alt="The first page of the paper: the title, the abstract and the introduction." fetchpriority="high"></div></div>
+
+        <div class="hero__layer ed" style="--x:5%; --y:62%; --f:.88cqw; --mx:6%; --my:66%; --mf:2cqw">
+          <div class="ed-card">
+            <p class="ed-k">Application form</p>
+            <p class="ed-h">Step 3 of 5</p>
+            <div class="ed-steps__bar"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+            <p class="ed-saved">Saved automatically, just now</p>
+          </div>
+        </div>
+        <div class="hero__layer ed hide-m" style="--x:63%; --y:80%; --f:.9cqw">
+          <div class="ed-undo">Changes saved <b>Undo</b></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- PROBLEM -->
+    <section class="sec" data-view aria-labelledby="problem">
+      <h2 class="duo sec__head" id="problem" data-reveal><span>Problem</span><span>Statement</span></h2>
+      <p class="lead lead--wide" data-reveal style="--d:120">Most neuroinclusive UX research centres on <b>autism and ADHD</b> <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2.5"/></svg></span> <span class="ic ic--fill"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span> in education, leaving out adults with <b>OCD, Tourette’s, sensory processing differences and anxiety</b> in the places that matter most.</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="sec" data-view aria-labelledby="about-project">
+      <h2 class="duo sec__head" id="about-project" data-reveal><span>About</span><span>Project</span></h2>
+      <div class="about-p">
+        <div data-reveal style="--d:100">
+          <p class="body">This paper looks at the adults neuroinclusive research tends to leave out, and at the everyday, high-stakes places they meet friction: healthcare portals, work software and online checkouts.</p>
+          <p class="body" style="margin-top:1em">It argues for an evidence-based approach led by empathy rather than a deficit model, and treats neurodiversity as a source of better design for everyone.</p>
+          <ul class="chips" aria-label="Neurotypes">
+            <li class="chip chip--on">Autism</li>
+            <li class="chip chip--on">ADHD</li>
+            <li class="chip chip--gap">OCD</li>
+            <li class="chip chip--gap">Tourette’s</li>
+            <li class="chip chip--gap">Dyspraxia</li>
+            <li class="chip chip--gap">Sensory processing</li>
+            <li class="chip chip--gap">Anxiety</li>
+          </ul>
+          <p class="chips-key mono"><span>Where most research looks</span><span class="is-gap">Who this paper centres</span></p>
+        </div>
+        <dl class="facts" data-reveal style="--d:200">
+          <div><dt class="mono">Project</dt><dd>Redesigning Inclusivity</dd></div>
+          <div><dt class="mono">Field</dt><dd>Neuroinclusive UX</dd></div>
+          <div><dt class="mono">Role</dt><dd>UX research</dd></div>
+          <div><dt class="mono">Type</dt><dd>Research paper, 8 pages</dd></div>
+          <div><dt class="mono">Methods</dt><dd>Interviews, card sorting, co-design</dd></div>
+          <div><dt class="mono">Year</dt><dd>2026</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- BIG LINE + TABLET -->
+    <section class="sec" data-view>
+      <div class="panel panel--soft rise">
+        <h2 class="display" data-reveal><span>Usable isn’t</span><span class="q">the same as comfortable.</span></h2>
+        <div class="rise__device"><div data-reveal style="--d:200">
+          <div class="tablet" style="--w:min(52cqw, 520px)"><div class="tablet__screen"><img src="../../assets/img/projects/inclusivity/page-2.jpg" width="919" height="1300" loading="lazy" decoding="async" alt="Page two: the literature review, why we need to rethink inclusivity."></div></div>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- THE GAP -->
+    <section class="sec" data-view aria-labelledby="gap">
+      <h2 class="duo sec__head" id="gap" data-reveal><span>The</span><span>Gap</span></h2>
+      <div class="pain">
+        <div class="ring" data-reveal style="--d:100" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="52" stroke="rgba(236,231,222,.92)" stroke-dasharray="101 225.7" transform="rotate(-86 60 60)"/>
+            <circle cx="60" cy="60" r="52" stroke="rgba(236,231,222,.5)" stroke-dasharray="101 225.7" transform="rotate(34 60 60)"/>
+            <circle cx="60" cy="60" r="52" stroke="var(--acc)" stroke-dasharray="101 225.7" transform="rotate(154 60 60)"/>
+          </svg>
+          <p class="ring__label"><span>Research</span><span>Blind spots</span></p>
+        </div>
+        <ol class="key">
+          <li data-reveal style="--d:150"><span class="mono">01</span><div><b>A narrow focus</b><p>Guidelines built around attention and executive function miss needs like endless re-checking with OCD, or interfaces that punish accidental clicks with Tourette’s.</p></div></li>
+          <li data-reveal style="--d:220"><span class="mono">02</span><div><b>Compliance isn’t comfort</b><p>WCAG sets the baseline, but says nothing about whether an experience feels safe and calm. The question has to move from “is this usable?” to “is this comfortable and welcoming?”</p></div></li>
+          <li data-reveal style="--d:290"><span class="mono">03</span><div><b>Nothing measures sensory stress</b><p>Usability testing barely touches sensory or emotional comfort, so there’s no standard way to show that sensory-friendly design helps.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="sec" data-view>
+      <p class="quote-c" data-reveal>The problem sits <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></span> in the design, <span class="ic ic--fill"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0114 0"/></svg></span> not the person.</p>
+      <p class="mono" style="margin-top:22px; text-align:center; --d:100" data-reveal>From the discussion</p>
+    </section>
+
+    <!-- THE STUDY IN NUMBERS -->
+    <section class="sec" data-view aria-labelledby="numbers">
+      <h2 class="duo sec__head" id="numbers" data-reveal><span>The Study</span><span>In numbers</span></h2>
+      <div class="trio">
+        <article data-reveal><span class="num">25</span><div><b>Adults, 18 and over</b><p>Neurodivergent participants as co-designers, not test subjects.</p></div></article>
+        <article data-reveal style="--d:100"><span class="num">5</span><div><b>Neurotypes</b><p>Autism, ADHD, OCD, Tourette’s and sensory processing disorder.</p></div></article>
+        <article data-reveal style="--d:200"><span class="num">3</span><div><b>Research phases</b><p>From listening, to sorting, to designing and testing together.</p></div></article>
+      </div>
+    </section>
+
+    <!-- PHASES -->
+    <section class="sec" data-view aria-labelledby="phases">
+      <h2 class="duo sec__head" id="phases" data-reveal><span>Research</span><span>Phases</span></h2>
+      <ol class="timeline" style="--n:5; --d:100" data-reveal>
+        <li class="step"><div class="step__box"><span class="step__check step__check--n">IRB</span><p><b>Ethics &amp; safety</b><span class="mono">Before anything</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check step__check--n">1</span><p><b>In-depth interviews</b><span class="mono">Phase 1</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check step__check--n">2</span><p><b>Card sorting</b><span class="mono">Phase 2</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check step__check--n">3</span><p><b>Co-design workshops</b><span class="mono">Phase 3</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check step__check--n">3</span><p><b>Testing against the original</b><span class="mono">Phase 3</span></p></div></li>
+      </ol>
+      <p class="body" style="margin-top: clamp(40px, 5vw, 70px)" data-reveal>A mixed-methods study with formal IRB approval and emotional safety built in: decompression breaks were always there, and anyone could pause or leave an activity at any time, to avoid cognitive or sensory overload.</p>
+    </section>
+
+    <!-- MEASURES -->
+    <section class="sec" data-view aria-labelledby="measures">
+      <h2 class="duo sec__head" id="measures" data-reveal><span>Measuring</span><span>What people feel</span></h2>
+      <div class="bento">
+        <div class="panel span-2 ed col" data-reveal>
+          <div class="ed-card">
+            <p class="ed-k">Cognitive comfort</p>
+            <p class="ed-h">Modified NASA-TLX</p>
+            <div class="ed-slider"><p><span>Mental demand</span><span>High</span></p><i style="--v:72%"></i></div>
+            <div class="ed-slider"><p><span>Effort</span><span>High</span></p><i style="--v:64%"></i></div>
+            <div class="ed-slider"><p><span>Frustration &amp; anxiety</span><span>High</span></p><i style="--v:81%"></i></div>
+          </div>
+          <p class="panel__cap mono">Mental demand, effort and, above all, frustration and anxiety after each task</p>
+        </div>
+        <div class="panel span-2 ed col" data-reveal style="--d:100">
+          <div class="ed-card">
+            <p class="ed-k">Sensory load</p>
+            <p class="ed-h">Sensory Overload Scale</p>
+            <div class="ed-scale"><span>1</span><span class="on">2</span><span>3</span><span>4</span><span>5</span></div>
+            <p class="ed-ends"><span>Calm</span><span>Overwhelmed</span></p>
+          </div>
+          <p class="panel__cap mono">A five-point self-report of distress from sights, sounds or movement, before and after each task</p>
+        </div>
+        <div class="panel span-2 ed col" data-reveal style="--d:200">
+          <div class="ed-card">
+            <p class="ed-k">Emotional safety</p>
+            <p class="ed-h">How do you feel right now?</p>
+            <div class="ed-scale"><span>☺</span><span class="on">◡</span><span>–</span><span>◠</span><span>☹</span></div>
+            <p class="ed-ends"><span>At ease</span><span>Anxious</span></p>
+          </div>
+          <p class="panel__cap mono">One quick visual question, right before and after difficult moments</p>
+        </div>
+      </div>
+      <p class="mono" style="margin-top:16px" data-reveal>The three measures, drawn as the questions people answer</p>
+    </section>
+
+    <!-- FINDINGS -->
+    <section class="sec" data-view aria-labelledby="findings">
+      <h2 class="display sec__head" id="findings" data-reveal><span>Finishing a task</span><span><em>isn’t the same</em></span><span class="q">as being fine.</span></h2>
+      <p class="body" data-reveal style="--d:100">The paper expects people to complete their tasks on both versions of the form, but the original to leave them far more drained, with markedly higher NASA-TLX and Sensory Overload scores than the co-designed prototype (p&nbsp;&lt;&nbsp;.01). The friction is real even when nothing visibly fails: it’s an invisible mental toll.</p>
+
+      <div class="orbit" style="margin-top: clamp(56px, 7vw, 110px); --d:150" data-reveal>
+        <div class="orbit__arcs" aria-hidden="true">
+          <div class="orbit__arc" style="--s:78cqw; --a:.025">Healthcare · work · checkout</div>
+          <div class="orbit__arc" style="--s:54cqw; --a:.045">Cognitive &amp; sensory comfort</div>
+          <div class="orbit__arc orbit__arc--core" style="--s:30cqw">E-DUX</div>
+        </div>
+        <div class="orbit__call" style="left:0; top:6%"><b><i>◎</i>OCD &amp; Tourette’s</b><p>Uncertainty is the frustration: clear, always-visible status and quick ways to undo.</p></div>
+        <div class="orbit__call" style="right:0; top:6%"><b><i>≈</i>Sensory processing</b><p>Motion spikes stress: a way to turn off all non-essential motion, not just a mute button.</p></div>
+        <div class="orbit__call" style="left:0; top:52%"><b><i>→</i>ADHD &amp; autism</b><p>Actions first: Pay, Edit, View, rather than digging through categories like “Preferences”.</p></div>
+        <div class="orbit__call" style="right:0; top:52%"><b><i>∞</i>Everyone</b><p>Designing for the edges improves the middle, for people under stress and on mobile too.</p></div>
+      </div>
+    </section>
+
+    <!-- FRAMEWORK -->
+    <section class="sec" data-view aria-labelledby="framework">
+      <h2 class="duo sec__head" id="framework" data-reveal><span>The E-DUX</span><span>Framework</span></h2>
+      <p class="lead lead--wide" data-reveal>Everything the study heard comes together in <b>three principles</b> <span class="ic ic--fill"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span> for calmer, more flexible digital products.</p>
+      <div class="trio" style="margin-top: clamp(40px, 5vw, 70px)">
+        <article data-reveal><span class="num">01</span><div><b>Predictable pacing and control</b><p>People set the pace: no timed sessions on important forms, auto-save that just works, undo and exit buttons you can’t miss, and status that says where you are, like “Step 3 of 5”.</p><p class="mono" style="margin-top:14px; color:var(--acc)">For OCD, Tourette’s, executive function and anxiety</p></div></article>
+        <article data-reveal style="--d:100"><span class="num">02</span><div><b>Sensory sanctuary</b><p>No surprise sounds or flashing lights. Let people turn off unnecessary animation, switch to gentle colours and adjust density, like bigger text or more space between lines.</p><p class="mono" style="margin-top:14px; color:var(--acc)">For sensory processing, autism and Tourette’s</p></div></article>
+        <article data-reveal style="--d:200"><span class="num">03</span><div><b>Adaptive information density</b><p>Information in small, logical groups of three to five, collapsible sections so nothing overwhelms, and action labels tested with real people rather than guessed.</p><p class="mono" style="margin-top:14px; color:var(--acc)">For ADHD, autism and executive function</p></div></article>
+      </div>
+    </section>
+
+    <!-- E-DUX AS INTERFACE -->
+    <section class="sec" data-view aria-labelledby="interface">
+      <h2 class="duo sec__head" id="interface" data-reveal><span>E-DUX</span><span>As interface</span></h2>
+      <div class="bento">
+        <div class="panel span-3 ed col" data-reveal>
+          <div class="ed-card">
+            <p class="ed-k">Application form</p>
+            <p class="ed-h">Step 3 of 5: Your details</p>
+            <div class="ed-steps__bar"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+            <p class="ed-saved">Saved automatically, just now</p>
+            <div class="ed-btns"><span class="ed-link">Exit and finish later</span><span style="display:flex; gap:.5em"><span class="ed-btn ed-btn--ghost">Back</span><span class="ed-btn">Continue</span></span></div>
+          </div>
+          <p class="panel__cap mono">01&ensp;Predictable pacing: where you are, that it’s saved, a way out</p>
+        </div>
+        <div class="panel span-3 ed col" data-reveal style="--d:100">
+          <div class="ed-card">
+            <p class="ed-k">Comfort settings</p>
+            <div class="ed-row"><p>Reduce motion<small>Turns off all non-essential animation</small></p><span class="ed-toggle on"></span></div>
+            <div class="ed-row"><p>Gentle colours<small>Softer contrast, no flashing alerts</small></p><span class="ed-toggle on"></span></div>
+            <div class="ed-row"><p>Text size</p><span class="ed-seg"><span>A</span><span class="on">A+</span><span>A++</span></span></div>
+            <div class="ed-row"><p>Line spacing</p><span class="ed-seg"><span>Normal</span><span class="on">More</span></span></div>
+          </div>
+          <p class="panel__cap mono">02&ensp;Sensory sanctuary: motion, colour and density under the person’s control</p>
+        </div>
+        <div class="panel span-2 ed col" data-reveal>
+          <div class="ed-card" style="width:18em">
+            <p class="ed-k">Your account</p>
+            <div class="ed-group"><p>Bills <span>3</span></p><ul><li>Electricity, due Friday</li><li>Phone, paid</li><li>Rent, due on the 1st</li></ul></div>
+            <div class="ed-group"><p>Messages <span>2</span></p></div>
+            <div class="ed-group"><p>Documents <span>4</span></p></div>
+          </div>
+          <p class="panel__cap mono">03&ensp;Small groups, collapsed until needed</p>
+        </div>
+        <div class="panel span-2 ed col" data-reveal style="--d:100">
+          <div class="ed-acts">
+            <span><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>Pay</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>Edit</span>
+            <span><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>View</span>
+          </div>
+          <p class="panel__cap mono">03&ensp;Actions first, in words people chose</p>
+        </div>
+        <div class="panel span-2 ed col" data-reveal style="--d:200">
+          <div class="ed-undo">Changes saved <b>Undo</b></div>
+          <p class="panel__cap mono">01&ensp;Every action can be taken back</p>
+        </div>
+      </div>
+      <p class="mono" style="margin-top:16px" data-reveal>Illustrations of the three principles, not the study’s own prototype</p>
+    </section>
+
+    <!-- BIG LINE + LAPTOP -->
+    <section class="sec" data-view>
+      <div class="panel panel--soft rise">
+        <h2 class="display" data-reveal><span>Designing for the edges</span><span><em>improves</em></span><span class="q">the middle.</span></h2>
+        <div class="rise__device rise__device--flat"><div data-reveal style="--d:200">
+          <div class="laptop" style="--w:min(78cqw, 980px)">
+            <div class="laptop__lid"><div class="laptop__screen"><div class="pdfview">
+              <div class="pdfview__bar"><span>redesigning-inclusivity.pdf</span><span>Pages 5–6 of 8</span></div>
+              <div class="pdfview__pages"><img src="../../assets/img/projects/inclusivity/page-5.jpg" width="919" height="1300" loading="lazy" decoding="async" alt="Page five: the Empathy-Driven UX framework."><img src="../../assets/img/projects/inclusivity/page-6.jpg" width="919" height="1300" loading="lazy" decoding="async" alt="Page six: the discussion, and how neurodiversity fuels universal design."></div>
+            </div></div></div>
+            <div class="laptop__base"></div>
+          </div>
+        </div></div>
+      </div>
+      <p class="body" style="margin-top: clamp(40px, 5vw, 70px)" data-reveal>These aren’t special add-ons. Turning off parallax and flashing alerts lowers sensory load for everyone, including people with vestibular issues, anyone working under stress, and people on mobile. Chunking information to what working memory can hold, about four items at a time, makes a dashboard easier for anyone to skim in a hurry. What starts as a neurodivergent need becomes a new standard for clarity.</p>
+    </section>
+
+    <!-- NEXT -->
+    <section class="sec" data-view aria-labelledby="next">
+      <h2 class="duo sec__head" id="next" data-reveal><span>What</span><span>Comes next</span></h2>
+      <ol class="key">
+        <li data-reveal style="--d:100"><span class="mono">01</span><div><b>Scale and time</b><p>Twenty-five participants give rich detail and early proof, not the whole picture. Next is E-DUX in a large company or healthcare system, tracking fatigue and frustration over months rather than one session.</p></div></li>
+        <li data-reveal style="--d:170"><span class="mono">02</span><div><b>A standard measure</b><p>Validating the Sensory Overload Scale against established emotional and sensory tools, so it’s ready for industry-wide use.</p></div></li>
+        <li data-reveal style="--d:240"><span class="mono">03</span><div><b>Across cultures</b><p>Testing how ideas about urgency, predictability and information structure translate across languages and cultures.</p></div></li>
+      </ol>
+    </section>
+
+    <!-- THE PAPER, PAGE BY PAGE -->
+    <section class="sec" data-view aria-labelledby="walk">
+      <h2 class="sr-only" id="walk">The paper, page by page</h2>
+      <div class="marquee" aria-hidden="true"><div class="marquee__track">
+        <span>Calmer by design <i>✦</i></span><span>Calmer by design <i>✦</i></span><span>Calmer by design <i>✦</i></span><span>Calmer by design <i>✦</i></span>
+        <span>Calmer by design <i>✦</i></span><span>Calmer by design <i>✦</i></span><span>Calmer by design <i>✦</i></span><span>Calmer by design <i>✦</i></span>
+      </div></div>
+
+      <div class="walk">
+        <div class="walk__step" data-reveal>
+          <div class="walk__shot"><div class="sheet" style="--w:min(300px, 66vw)"><img src="../../assets/img/projects/inclusivity/page-1.jpg" width="919" height="1300" loading="lazy" decoding="async" alt="Page one: the abstract and introduction."></div></div>
+          <div class="walk__note"><span class="mono">Page 1&ensp;Abstract</span><h3>Who gets left out</h3><p>Everyday tasks, a form, a dense dashboard, a fast-moving signal, can fill up with confusion, anxiety and fatigue. Not a small annoyance, but an ongoing drag.</p></div>
+        </div>
+        <div class="walk__step walk__step--flip" data-reveal>
+          <div class="walk__shot"><div class="sheet" style="--w:min(300px, 66vw)"><img src="../../assets/img/projects/inclusivity/page-2.jpg" width="919" height="1300" loading="lazy" decoding="async" alt="Page two: the literature review."></div></div>
+          <div class="walk__note"><span class="mono">Page 2&ensp;Literature review</span><h3>Why we need to rethink inclusivity</h3><p>Research stuck on autism and ADHD, accessibility that ticks boxes but not comfort, and no standard way to measure sensory and emotional impact.</p></div>
+        </div>
+        <div class="walk__step" data-reveal>
+          <div class="walk__shot"><div class="sheet" style="--w:min(300px, 66vw)"><img src="../../assets/img/projects/inclusivity/page-3.jpg" width="919" height="1300" loading="lazy" decoding="async" alt="Page three: the methodology."></div></div>
+          <div class="walk__note"><span class="mono">Page 3&ensp;Method</span><h3>Co-designers, not test subjects</h3><p>Ethics and safety first, then three phases: in-depth interviews, card sorting with real interface pieces, and co-designing a better application form.</p></div>
+        </div>
+        <div class="walk__step walk__step--flip" data-reveal>
+          <div class="walk__shot"><div class="sheet" style="--w:min(300px, 66vw)"><img src="../../assets/img/projects/inclusivity/page-4.jpg" width="919" height="1300" loading="lazy" decoding="async" alt="Page four: the measures and the expected results."></div></div>
+          <div class="walk__note"><span class="mono">Page 4&ensp;Measures &amp; findings</span><h3>Measuring what people feel</h3><p>A modified NASA-TLX, a Sensory Overload Scale and a one-question anxiety scale, and the friction they expect to reveal even when tasks get done.</p></div>
+        </div>
+        <div class="walk__step" data-reveal>
+          <div class="walk__shot"><div class="sheet" style="--w:min(300px, 66vw)"><img src="../../assets/img/projects/inclusivity/page-5.jpg" width="919" height="1300" loading="lazy" decoding="async" alt="Page five: the E-DUX framework."></div></div>
+          <div class="walk__note"><span class="mono">Page 5&ensp;Framework</span><h3>E-DUX, in three principles</h3><p>Predictable pacing and control, a sensory sanctuary, and adaptive information density.</p></div>
+        </div>
+        <div class="walk__step walk__step--flip" data-reveal>
+          <div class="walk__shot"><div class="sheet" style="--w:min(300px, 66vw)"><img src="../../assets/img/projects/inclusivity/page-7.jpg" width="919" height="1300" loading="lazy" decoding="async" alt="Page seven: limitations, where to go next, and the conclusion."></div></div>
+          <div class="walk__note"><span class="mono">Page 7&ensp;What’s next</span><h3>From early evidence to everyday practice</h3><p>Scale and time, a standard measure, and testing across cultures, then the conclusion: the benchmark for real innovation.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- END -->
+    <section class="sec" data-view aria-labelledby="read">
+      <div class="finale">
+        <h2 class="display display--center" id="read" data-reveal><span>Read the</span><span class="q">full paper.</span></h2>
+        <p class="body" data-reveal style="--d:120">Eight pages: the abstract and introduction, the literature review, the method, the measures and expected findings, the E-DUX framework, the discussion, limitations and next steps, and the references.</p>
+        <a class="cta" href="../../assets/docs/redesigning-inclusivity.pdf" target="_blank" rel="noopener" data-reveal style="--d:200">Open the PDF&ensp;↗</a>
+      </div>
+    </section>
+
+    <nav class="st-end micro" aria-label="Projects">
+      <a class="u" href="../#projects">←&ensp;Back to projects</a>
+      <a class="u" href="#top" data-top>Back to top&ensp;↑</a>
+    </nav>
+  </main>
+
+  <script src="../../assets/js/site.js?v=91" defer></script>
+  <script src="../../assets/js/page.js?v=92" defer></script>
+  <script>
+    // "Back to top"
+    document.querySelector('[data-top]').addEventListener('click', (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); });
+  </script>
+</body>
+</html>

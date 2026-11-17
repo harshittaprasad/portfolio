@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en" class="page-case">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FlowLedger | Harshita Prasad</title>
+  <meta name="description" content="FlowLedger: an AI-assisted personal finance app that records spending on its own, splits bills with friends and explains your month in plain language. A case study by Harshita Prasad.">
+  <meta name="theme-color" content="#0C0C0B">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Fragment+Mono&family=Inter:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../../assets/css/base.css?v=94">
+  <link rel="stylesheet" href="../../assets/css/case.css?v=6">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <header class="site-header micro">
+    <a class="u" href="../../" data-nav>Harshita Prasad</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="u" href="../#projects" aria-current="page">Work</a>
+      <a class="u" href="../#about">About</a>
+    </nav>
+  </header>
+
+  <!-- FLOWLEDGER CASE STUDY. The phone screens are screenshots of the live app
+       (flowledger-ai.vercel.app), in assets/img/projects/flowledger/.
+       Role, type and year in .case__meta are a best reading of the project;
+       change them if they're not right. -->
+  <main class="case" style="--spec-bg:#F8FAFC; --spec-fg:#111827; --spec-quiet:#6B7280; --spec-accent:#0066FF">
+
+    <div class="case__head">
+      <div>
+        <p class="case__eyebrow mono" data-reveal style="--d:150">Case study&ensp;·&ensp;Mobile app</p>
+        <h1 class="case__title" data-reveal style="--d:250">FlowLedger</h1>
+      </div>
+      <p class="case__lede" data-reveal style="--d:450">An AI-assisted money app that records your spending on its own, splits bills with friends and explains your month in plain language.</p>
+    </div>
+
+    <dl class="case__meta" data-reveal style="--d:600">
+      <div><dt class="mono">Role</dt><dd>UX &amp; UI design</dd></div>
+      <div><dt class="mono">Type</dt><dd>Mobile app, personal finance</dd></div>
+      <div><dt class="mono">Year</dt><dd>2026</dd></div>
+      <div><dt class="mono">Built with</dt><dd>React</dd></div>
+    </dl>
+
+    <figure class="shot shot--hero" data-reveal style="--d:750">
+      <img src="../../assets/img/projects/flowledger/hero.jpg" width="2000" height="1250" alt="Five FlowLedger screens on a blue background: onboarding, home, the AI report, split and transactions." fetchpriority="high">
+      <figcaption class="mono">Onboarding, home, AI report, split and transactions</figcaption>
+    </figure>
+
+    <!-- 01 -->
+    <section class="block" data-view aria-labelledby="overview">
+      <p class="block__label mono" data-reveal>01&ensp;—&ensp;Overview</p>
+      <div class="block__body">
+        <h2 id="overview" data-reveal style="--d:100">A money app that does the bookkeeping for you.</h2>
+        <p data-reveal style="--d:200">FlowLedger connects to your bank once, then records and categorises every transaction for you. On top of that ledger it adds what a spreadsheet can’t: a forecast towards your goals, alerts when spending drifts, a shared tab with friends, and a monthly report written in plain language.</p>
+        <p data-reveal style="--d:280">It’s designed phone-first, for the moments people actually check their money: in a queue, after dinner, just before buying something.</p>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section class="block" data-view aria-labelledby="challenge">
+      <p class="block__label mono" data-reveal>02&ensp;—&ensp;The challenge</p>
+      <div class="block__body">
+        <h2 id="challenge" data-reveal style="--d:100">Turning a list of payments into something you can act on.</h2>
+        <ul class="points">
+          <li data-reveal style="--d:200"><strong>Numbers without meaning.</strong> A balance and a list of payments say what happened, not whether you’re on track.</li>
+          <li data-reveal style="--d:280"><strong>Money is social.</strong> Dinners, trips and rent get shared, and keeping score with friends is awkward.</li>
+          <li data-reveal style="--d:360"><strong>Small leaks add up.</strong> Subscriptions and recurring bills are easy to forget until they’re charged.</li>
+          <li data-reveal style="--d:440"><strong>It’s personal.</strong> People check their finances in public, so the app has to be discreet.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section class="block block--wide" data-view aria-labelledby="approach">
+      <p class="block__label mono" data-reveal>03&ensp;—&ensp;Approach</p>
+      <div class="block__body">
+        <h2 id="approach" data-reveal style="--d:100">Six decisions that shaped the app.</h2>
+
+        <article class="decision">
+          <h3 data-reveal><span class="mono">01</span>Start with one number, then where it’s heading</h3>
+          <p data-reveal style="--d:100">Home opens on a single figure, total net liquidity, split into cash, investments and digital assets. Under it, an AI forecast shows progress towards a savings goal and when you’ll reach it. Then smart alerts flag what changed this week, green for good news and red when something needs attention, and bars show how much of each budget is left, followed by savings pots and the bills coming up.</p>
+          <figure class="screens" data-reveal style="--d:200">
+            <div class="phones" style="--n:2">
+              <img src="../../assets/img/projects/flowledger/home.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Home: total net liquidity of $2,658.31, an AI forecast on track for a $150k goal, and two smart alerts.">
+              <img src="../../assets/img/projects/flowledger/home-budgets.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Further down home: category budgets as progress bars, and savings pots for Japan 2025 and a house fund.">
+            </div>
+            <figcaption class="mono">Home: the balance, the forecast, then what changed</figcaption>
+          </figure>
+        </article>
+
+        <article class="decision">
+          <h3 data-reveal><span class="mono">02</span>A ledger you can scan</h3>
+          <p data-reveal style="--d:100">Transactions are grouped by day, each with a category icon, the merchant, the category and time, and the amount with its status. A search field and category chips (food, travel, shopping, entertainment) narrow the list in one tap.</p>
+        </article>
+
+        <article class="decision">
+          <h3 data-reveal><span class="mono">03</span>Splitting without the awkwardness</h3>
+          <p data-reveal style="--d:100">Split opens on two cards, what you’re owed and what you owe, then one row per friend with a single action: Remind, or Pay Up. Add Expense and Settle Up sit right under the totals, with shared groups (a flat, a weekend trip) and a log of who paid what one tab away.</p>
+          <figure class="screens" data-reveal style="--d:200">
+            <div class="phones" style="--n:2">
+              <img src="../../assets/img/projects/flowledger/list.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Transactions: a search field, category chips and payments grouped by date.">
+              <img src="../../assets/img/projects/flowledger/split.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Split: a green card for $1,598.75 you are owed, a blue card for $91.00 you owe, and a row per friend with a Remind button.">
+            </div>
+            <figcaption class="mono">The ledger, and splitting with friends</figcaption>
+          </figure>
+        </article>
+
+        <article class="decision">
+          <h3 data-reveal><span class="mono">04</span>A report that explains itself</h3>
+          <p data-reveal style="--d:100">The AI report starts with a sentence rather than a chart: how much you’re on track to save, and what’s working against it. Then money in and out, each category marked over or within budget, spending against income over six months, a heatmap of the month, the yearly cost of your subscriptions, and recommendations that end in a concrete next step, like a weekly cap on dining.</p>
+          <figure class="screens" data-reveal style="--d:200">
+            <div class="phones" style="--n:3">
+              <img src="../../assets/img/projects/flowledger/report.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="AI report: a plain-language summary, inflow and outflow, and categories over and within budget.">
+              <img src="../../assets/img/projects/flowledger/report-trends.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="AI report: a wealth projection line and a bar chart of spending against income from October to March.">
+              <img src="../../assets/img/projects/flowledger/report-insights.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="AI report: a heatmap of October, an annual subscription leak of $1,931.88, and an AI recommendation to cap dining.">
+            </div>
+            <figcaption class="mono">The AI report: summary first, detail after, a next step at the end</figcaption>
+          </figure>
+        </article>
+
+        <article class="decision">
+          <h3 data-reveal><span class="mono">05</span>Discreet by default</h3>
+          <p data-reveal style="--d:100">The eye in the header blurs every balance in place, for checking your money on a train or at a table. The same privacy mode lives in Settings, next to linked accounts, budgets, categories and exporting your data.</p>
+          <figure class="screens" data-reveal style="--d:200">
+            <div class="phones" style="--n:2">
+              <img src="../../assets/img/projects/flowledger/privacy.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Home with privacy mode on: the balances are blurred.">
+              <img src="../../assets/img/projects/flowledger/settings.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Settings: linked accounts, edit budget, manage categories, a privacy mode switch and export data as CSV.">
+            </div>
+            <figcaption class="mono">Privacy mode on, and the settings behind it</figcaption>
+          </figure>
+        </article>
+
+        <article class="decision">
+          <h3 data-reveal><span class="mono">06</span>Three screens to set expectations</h3>
+          <p data-reveal style="--d:100">Onboarding is three slides, one idea each: tracking that happens on its own, AI that sorts every purchase, and insights that tell you what to do next. Skip is always there for anyone who would rather just start.</p>
+          <figure class="screens" data-reveal style="--d:200">
+            <div class="phones" style="--n:3">
+              <img src="../../assets/img/projects/flowledger/onboarding-1.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Onboarding, slide one: Automatic Tracking.">
+              <img src="../../assets/img/projects/flowledger/onboarding-2.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Onboarding, slide two: AI Categorization.">
+              <img src="../../assets/img/projects/flowledger/onboarding-3.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Onboarding, slide three: Smart Insights, with a Get Started button.">
+            </div>
+            <figcaption class="mono">Onboarding: automatic tracking, AI categorisation, smart insights</figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <!-- 04 -->
+    <section class="block block--wide" data-view aria-labelledby="system">
+      <p class="block__label mono" data-reveal>04&ensp;—&ensp;Design system</p>
+      <div class="block__body">
+        <h2 id="system" data-reveal style="--d:100">Quiet surfaces, one confident blue.</h2>
+        <p data-reveal style="--d:200">Soft slate-white backgrounds and white cards keep the numbers up front. One electric blue carries every action and every bar of progress, while green, amber and red are saved for meaning: on track, watch out, over.</p>
+
+        <ul class="swatches" data-reveal style="--d:250">
+          <li style="--c:#0066FF"><span class="swatch"></span><b>Blue</b><span class="mono">#0066FF&ensp;·&ensp;Actions</span></li>
+          <li style="--c:#111827"><span class="swatch"></span><b>Ink</b><span class="mono">#111827&ensp;·&ensp;Text</span></li>
+          <li style="--c:#6B7280"><span class="swatch"></span><b>Grey</b><span class="mono">#6B7280&ensp;·&ensp;Quiet text</span></li>
+          <li style="--c:#F8FAFC"><span class="swatch"></span><b>Slate</b><span class="mono">#F8FAFC&ensp;·&ensp;Background</span></li>
+          <li style="--c:#10B981"><span class="swatch"></span><b>Green</b><span class="mono">#10B981&ensp;·&ensp;On track</span></li>
+          <li style="--c:#F59E0B"><span class="swatch"></span><b>Amber</b><span class="mono">#F59E0B&ensp;·&ensp;Watch out</span></li>
+          <li style="--c:#EF4444"><span class="swatch"></span><b>Red</b><span class="mono">#EF4444&ensp;·&ensp;Over budget</span></li>
+        </ul>
+
+        <div class="specimens" data-reveal style="--d:300">
+          <div class="specimen">
+            <span class="specimen__aa" aria-hidden="true" style="font-family: Inter, var(--font-sans); font-weight: 700; letter-spacing: -.03em">Aa</span>
+            <b>Inter</b><span class="mono">Headings &amp; numbers</span>
+          </div>
+          <div class="specimen">
+            <span class="specimen__aa" aria-hidden="true" style="font-family: Inter, var(--font-sans); font-weight: 700; letter-spacing: -.03em; font-size: 54px; margin-top: 14px">$2,658</span>
+            <b>Big, tabular figures</b><span class="mono">The balance comes first</span>
+          </div>
+          <div class="specimen">
+            <span class="radii" aria-hidden="true"><i style="--r:10px"></i><i style="--r:16px"></i><i style="--r:20px"></i><i style="--r:32px"></i></span>
+            <b>Four corners</b><span class="mono">10&ensp;·&ensp;16&ensp;·&ensp;20&ensp;·&ensp;32</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 -->
+    <section class="block" data-view aria-labelledby="outcome">
+      <p class="block__label mono" data-reveal>05&ensp;—&ensp;Outcome</p>
+      <div class="block__body">
+        <h2 id="outcome" data-reveal style="--d:100">A working app, live on the web.</h2>
+        <p data-reveal style="--d:200">FlowLedger is built in React and deployed, so every screen here can be tapped through: the five tabs, onboarding, search and filters on the ledger, groups and activity in Split, and privacy mode. It’s laid out for a phone, so it’s best opened on one.</p>
+        <p class="case__live" data-reveal style="--d:300"><a class="u" href="https://flowledger-ai.vercel.app/" target="_blank" rel="noopener">Open the live app&thinsp;↗</a></p>
+      </div>
+    </section>
+
+    <nav class="case__end micro" aria-label="Projects">
+      <a class="u" href="../#projects">←&ensp;Back to projects</a>
+      <a class="u" href="#top" data-top>Back to top&ensp;↑</a>
+    </nav>
+  </main>
+
+  <script src="../../assets/js/site.js?v=91" defer></script>
+  <script src="../../assets/js/page.js?v=92" defer></script>
+  <script>
+    // "Back to top"
+    document.querySelector('[data-top]').addEventListener('click', (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); });
+  </script>
+</body>
+</html>

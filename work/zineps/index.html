@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en" class="page-case">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Zineps | Harshita Prasad</title>
+  <meta name="description" content="Zineps: a website redesign for a shipping platform that sits between online stores and the carriers that deliver for them. A case study by Harshita Prasad.">
+  <meta name="theme-color" content="#0C0C0B">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Fragment+Mono&family=Inter+Tight:wght@400;500;600&family=Outfit:wght@500;600&display=swap">
+  <link rel="stylesheet" href="../../assets/css/base.css?v=94">
+  <link rel="stylesheet" href="../../assets/css/study.css?v=6">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <header class="site-header micro">
+    <a class="u" href="../../" data-nav>Harshita Prasad</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="u" href="../#projects" aria-current="page">Work</a>
+      <a class="u" href="../#about">About</a>
+    </nav>
+  </header>
+
+  <!-- ZINEPS CASE STUDY, presentation style (assets/css/study.css).
+       Every picture is a screenshot of the redesign itself, which lives in
+       work/zineps/site/ (desktop at 1440 px, phone captures at 390 px). The
+       navy cards floating over the devices are rebuilt in HTML (.zn-*), with
+       the numbers the redesign shows. The logo is assets/img/projects/zineps/logo.svg. -->
+  <main class="study" style="--acc:#62E6D0">
+
+    <!-- TITLE + HERO -->
+    <div class="st-title">
+      <div>
+        <p class="mono" data-reveal style="--d:150">Case study&ensp;·&ensp;Website redesign&ensp;·&ensp;2026</p>
+        <h1 data-reveal style="--d:250">Zineps</h1>
+      </div>
+      <p data-reveal style="--d:450">Redesigning the website of a shipping platform that sits between online stores and the carriers that deliver for them.</p>
+    </div>
+
+    <div data-reveal style="--d:600">
+      <section class="hero" aria-label="The Zineps redesign on a laptop and a phone">
+        <div class="tags tags--l"><span class="tag tag--k">category</span><span class="tag">Logistics SaaS</span></div>
+        <div class="tags tags--c"><span class="tag tag--k">platform</span><span class="tag">Web, responsive</span></div>
+        <div class="tags tags--r"><span class="tag tag--k">project</span><span class="tag">Website redesign</span></div>
+
+        <div class="hero__layer" style="--x:13%; --y:15%; --mx:4%; --my:20%">
+          <div class="laptop" style="--w:62cqw; --mw:92cqw">
+            <div class="laptop__lid"><div class="laptop__screen"><img src="../../assets/img/projects/zineps/hero.jpg" width="2000" height="1250" alt="The redesigned Zineps homepage: “Your shipping operation, in one place.” over navy, with the product dashboard below." fetchpriority="high"></div></div>
+            <div class="laptop__base"></div>
+          </div>
+        </div>
+        <div class="hero__layer" style="--x:68%; --y:25%; --pw:17cqw; --mx:58%; --my:44%; --mpw:36cqw">
+          <div class="phone phone--dark tilt-r"><div class="phone__screen"><span class="phone__bar"><b>9:41</b><i></i></span><img src="../../assets/img/projects/zineps/mobile-hero.jpg" width="780" height="1688" alt=""></div></div>
+        </div>
+        <div class="hero__layer zn" style="--x:4%; --y:58%; --f:1cqw; --mx:6%; --my:66%; --mf:2.2cqw">
+          <div class="zn-card zn-stat"><small>In transit</small><b>892</b><span class="up">8%</span></div>
+        </div>
+        <div class="hero__layer zn hide-m" style="--x:30%; --y:80%; --f:.95cqw">
+          <div class="zn-card zn-ship"><b>#ZP3921</b><span>Amsterdam → Berlin</span><em>In transit</em></div>
+        </div>
+        <div class="hero__layer zn hide-m" style="--x:3%; --y:14%; --f:.9cqw">
+          <span class="zn-pill">Shipping infrastructure</span>
+        </div>
+      </section>
+    </div>
+
+    <!-- PROBLEM -->
+    <section class="sec" data-view aria-labelledby="problem">
+      <h2 class="duo sec__head" id="problem" data-reveal><span>Problem</span><span>Statement</span></h2>
+      <p class="lead lead--wide" data-reveal style="--d:120">Zineps does a lot, <b>for two very different audiences</b> <span class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0M16 4.5a3.5 3.5 0 010 7M21.5 20a6.5 6.5 0 00-4-6"/></svg></span> <span class="ic ic--fill"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4zM3 7v10l9 4 9-4V7M12 11v10"/></svg></span>, and the website has one scroll to make all of it feel <b>clear, credible and easy to start with</b>.</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="sec" data-view aria-labelledby="about-project">
+      <h2 class="duo sec__head" id="about-project" data-reveal><span>About</span><span>Project</span></h2>
+      <div class="about-p">
+        <div data-reveal style="--d:100">
+          <p class="body">Zineps helps online stores and wholesalers automate shipping, from the order to the return, and gives carriers, forwarders and 3PLs a place to publish their services and manage their customers. One platform and one set of data, with two very different people looking at it.</p>
+          <p class="body" style="margin-top:1em">I redesigned the website around one question: how do you make a product this broad feel clear, credible and easy to start with, in a single scroll?</p>
+          <div class="pills"><span class="pill">UX/UI</span><span class="pill">Web design</span><span class="pill">Redesign</span><span class="pill">SaaS</span></div>
+        </div>
+        <dl class="facts" data-reveal style="--d:200">
+          <div><dt class="mono">Project</dt><dd>Zineps</dd></div>
+          <div><dt class="mono">Industry</dt><dd>Shipping &amp; logistics</dd></div>
+          <div><dt class="mono">Role</dt><dd>UX &amp; UI design</dd></div>
+          <div><dt class="mono">Type</dt><dd>Website redesign</dd></div>
+          <div><dt class="mono">Built with</dt><dd>HTML, CSS &amp; JavaScript</dd></div>
+          <div><dt class="mono">Year</dt><dd>2026</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- BIG LINE + LAPTOP -->
+    <section class="sec" data-view>
+      <div class="panel panel--soft rise">
+        <h2 class="display" data-reveal><span>Your shipping operation,</span><span class="q">in one place.</span></h2>
+        <div class="rise__device rise__device--flat"><div data-reveal style="--d:200">
+          <div class="laptop" style="--w:min(78cqw, 980px)">
+            <div class="laptop__lid"><div class="laptop__screen"><img src="../../assets/img/projects/zineps/product.jpg" width="2000" height="1972" loading="lazy" decoding="async" alt="The hero dashboard with six views, shipment counters, recent shipments, a volume chart and top carriers."></div></div>
+            <div class="laptop__base"></div>
+          </div>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- PAIN POINTS -->
+    <section class="sec" data-view aria-labelledby="pain">
+      <h2 class="duo sec__head" id="pain" data-reveal><span>Pain</span><span>Points</span></h2>
+      <div class="pain">
+        <div class="ring" data-reveal style="--d:100" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="52" stroke="rgba(236,231,222,.92)" stroke-dasharray="101 225.7" transform="rotate(-86 60 60)"/>
+            <circle cx="60" cy="60" r="52" stroke="rgba(236,231,222,.5)" stroke-dasharray="101 225.7" transform="rotate(34 60 60)"/>
+            <circle cx="60" cy="60" r="52" stroke="var(--acc)" stroke-dasharray="101 225.7" transform="rotate(154 60 60)"/>
+          </svg>
+          <p class="ring__label"><span>User</span><span>Pain Points</span></p>
+        </div>
+        <ol class="key">
+          <li data-reveal style="--d:150"><span class="mono">01</span><div><b>Two audiences</b><p>Merchants want lower shipping costs and less manual work. Logistics partners want to sell their services and keep their customers. Both land on the same page.</p></div></li>
+          <li data-reveal style="--d:220"><span class="mono">02</span><div><b>A wide product</b><p>Orders, labels, rates, tracking, returns, analytics and an AI layer, each worth a page of its own.</p></div></li>
+          <li data-reveal style="--d:290"><span class="mono">03</span><div><b>An abstract promise</b><p>“Partner rates” and “shipping AI” are easy to claim and hard to picture.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- STATEMENT -->
+    <section class="sec" data-view>
+      <p class="quote-c" data-reveal>Redesigned so a wide product feels simple, the page shows the product working <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></span> <span class="ic ic--fill"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span> before the copy has to explain it, and gives merchants and logistics partners a moment each.</p>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="sec" data-view aria-labelledby="timeline">
+      <h2 class="duo sec__head" id="timeline" data-reveal><span>Project</span><span>Timeline</span></h2>
+      <ol class="timeline" style="--n:5; --d:100" data-reveal>
+        <li class="step"><div class="step__box"><span class="step__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><p><b>Define</b><span class="mono">Completed</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><p><b>Page structure</b><span class="mono">Completed</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><p><b>UI design</b><span class="mono">Completed</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><p><b>Built in HTML, CSS, JS</b><span class="mono">Completed</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><p><b>Live redesign</b><span class="mono">Completed</span></p></div></li>
+      </ol>
+    </section>
+
+    <!-- FOUNDATION -->
+    <section class="sec" data-view aria-labelledby="foundation">
+      <h2 class="duo sec__head" id="foundation" data-reveal><span>Design</span><span>Foundation</span></h2>
+      <div class="orbit" data-reveal style="--d:100">
+        <div class="orbit__arcs" aria-hidden="true">
+          <div class="orbit__arc" style="--s:78cqw; --a:.025">E-commerce &amp; logistics</div>
+          <div class="orbit__arc" style="--s:54cqw; --a:.045">One platform, one set of data</div>
+          <div class="orbit__arc orbit__arc--core" style="--s:30cqw">Shipping AI</div>
+        </div>
+        <div class="orbit__call" style="left:0; top:6%"><b><i>◧</i>For merchants</b><p>Parcels from a webshop and freight from a warehouse, side by side as two ways to ship.</p></div>
+        <div class="orbit__call" style="right:0; top:6%"><b><i>⇄</i>For logistics partners</b><p>A section of their own, written to them, with their own call to action.</p></div>
+        <div class="orbit__call" style="left:0; top:52%"><b><i>#</i>Proof in numbers</b><p>Three plain figures straight after the promise, each with what it means for a shop.</p></div>
+        <div class="orbit__call" style="right:0; top:52%"><b><i>→</i>Starting feels small</b><p>Connect, match and ship, each with how long it takes, then the questions people ask.</p></div>
+      </div>
+    </section>
+
+    <!-- BRAND -->
+    <section class="sec" data-view aria-labelledby="brand">
+      <h2 class="duo sec__head" id="brand" data-reveal><span>Brand</span><span>Identity</span></h2>
+      <div class="brand-grid">
+        <div class="panel panel--navy" data-reveal><span class="zlogo" style="width:min(54%, 420px)" role="img" aria-label="The Zineps logo in white on navy"></span></div>
+        <div class="panel panel--mint" data-reveal style="--d:100"><span class="zmark" style="width:min(34%, 150px)" role="img" aria-label="The Zineps mark in navy on mint"></span></div>
+        <div class="panel panel--light" data-reveal><span class="zlogo" style="width:min(56%, 300px)" role="img" aria-label="The Zineps logo in navy on warm light"></span></div>
+        <div class="panel" data-reveal style="--d:100; background:#0A1A2A"><span class="app-icon"><span class="zmark" style="width:52%"></span></span></div>
+      </div>
+      <p class="lead lead--wide" style="margin-top: clamp(48px, 6vw, 90px)" data-reveal>One mark and one accent: <b>Zineps mint</b> <span class="ic ic--fill"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg></span> carries every action, on navy by default and on warm light one click away.</p>
+    </section>
+
+    <!-- TYPOGRAPHY -->
+    <section class="sec" data-view aria-labelledby="type">
+      <h2 class="duo sec__head" id="type" data-reveal><span>Typography</span><span>Used</span></h2>
+      <div class="panel type-spec" data-reveal style="--d:100">
+        <div class="type-spec__row mono"><span>Headlines</span><span class="type-spec__weights"><span>Medium</span><span>Semibold</span></span></div>
+        <p class="type-spec__name" style="font-family: Outfit, sans-serif; font-weight: 600; letter-spacing: -.045em">Outfit</p>
+        <div class="type-spec__set mono"><span>Text &amp; interface: Inter Tight</span><span>Aa Bb Cc Dd Ee Ff Gg 0123456789 € % →</span></div>
+      </div>
+      <p class="lead lead--wide" style="margin-top: clamp(48px, 6vw, 90px)" data-reveal>Outfit gives the headlines a <b>friendly, rounded</b> <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg></span> voice, and Inter Tight keeps dense tables and labels <b>calm and technical</b>.</p>
+    </section>
+
+    <!-- COLOUR -->
+    <section class="sec" data-view aria-labelledby="colour">
+      <h2 class="duo sec__head" id="colour" data-reveal><span>Color</span><span>Palette</span></h2>
+      <div class="palette" data-reveal style="--d:100" aria-label="Palette: navy #07121F for the background, deep blue #10283D for surfaces, mint #62E6D0 for actions and ink #F1F5F3 for text.">
+        <span class="palette__dot" style="--c:#10283D; left:50%; top:30%"></span>
+        <span class="palette__dot" style="--c:#07121F; left:37%; top:54%"></span>
+        <span class="palette__dot" style="--c:#F1F5F3; left:63%; top:54%"></span>
+        <span class="palette__dot" style="--c:#62E6D0; left:50%; top:76%; width:20cqw"></span>
+        <span class="palette__hex" style="left:50%; top:20%">#10283D<small>Surfaces</small></span>
+        <span class="palette__hex" style="left:31%; top:54%">#07121F<small>Background</small></span>
+        <span class="palette__hex" style="left:69%; top:54%">#F1F5F3<small>Text</small></span>
+        <span class="palette__hex" style="left:50%; top:78%">#62E6D0<small>Actions</small></span>
+      </div>
+      <div class="semantics" data-reveal style="--d:200">
+        <span style="--c:#A9BAC7"><i></i>#A9BAC7&ensp;Quiet text</span>
+        <span style="--c:#E0A458"><i></i>#E0A458&ensp;Exceptions only</span>
+      </div>
+    </section>
+
+    <!-- COMPONENTS -->
+    <section class="sec" data-view aria-labelledby="components">
+      <h2 class="duo sec__head" id="components" data-reveal><span>Key</span><span>Components</span></h2>
+      <div class="bento">
+        <div class="panel span-3 zn" data-reveal>
+          <div class="zn-card zn-route">
+            <div class="zn-route__head"><b>Amsterdam to Milan, 2.4 kg</b><span>4 options</span></div>
+            <div class="zn-opt on"><i style="--b:#FFCC00; --bf:#D40511">DHL</i><div><b>DHL Parcel Connect</b><small>2 days, 97.4% on time</small></div><p><b>€14.20</b><br><small>Recommended</small></p></div>
+            <div class="zn-opt"><i style="--b:#351C15; --bf:#FFB500">UPS</i><div><b>UPS Express Saver</b><small>Next day, 96.1% on time</small></div><p><b>€24.60</b><br><small>Fastest</small></p></div>
+            <div class="zn-opt"><i style="--b:#DC0032">DPD</i><div><b>DPD Classic</b><small>3 days, 94.8% on time</small></div><p><b>€13.40</b><br><small>Cheapest</small></p></div>
+            <div class="zn-opt"><i style="--b:#4D148C; --bf:#FF6200">FedEx</i><div><b>FedEx Economy</b><small>3 days, 95.2% on time</small></div><p><b>€13.90</b><br><small>Your contract</small></p></div>
+            <p class="zn-route__foot">Best balance of cost and reliability on this lane over the last 90 days.</p>
+          </div>
+        </div>
+        <div class="panel span-3 zn" data-reveal style="--d:100">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1em">
+            <div class="zn-card zn-stat"><small>Total shipments</small><b>1,284</b><span class="up">12%</span></div>
+            <div class="zn-card zn-stat"><small>In transit</small><b>892</b><span class="up">8%</span></div>
+            <div class="zn-card zn-stat"><small>Delivered</small><b>356</b><span class="up">14%</span></div>
+            <div class="zn-card zn-stat"><small>Exceptions</small><b>36</b><span class="down">3%</span></div>
+          </div>
+        </div>
+        <div class="panel span-4 zn" data-reveal>
+          <div style="display:grid; gap:.8em">
+            <div class="zn-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>Search by order, tracking ID or customer</div>
+            <div class="zn-card zn-ship"><b>#ZP3921</b><span>Amsterdam → Berlin</span><em>In transit</em></div>
+            <div class="zn-card zn-ship"><b>#ZP3919</b><span>Utrecht → Brussels</span><em style="color:#62E6D0">Delivered</em></div>
+          </div>
+        </div>
+        <div class="panel span-2 zn" data-reveal style="--d:100">
+          <div style="display:grid; justify-items:center; gap:1.4em">
+            <span class="zn-pill">Shipping AI</span>
+            <span class="zn-btn">Get started&ensp;→</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIG LINE + BROWSER -->
+    <section class="sec" data-view>
+      <div class="panel panel--soft rise">
+        <h2 class="display" data-reveal><span>Shipping AI,</span><span><em>something</em></span><span class="q">you can try.</span></h2>
+        <div class="rise__device rise__device--flat"><div data-reveal style="--d:200">
+          <figure class="browser" style="width:min(80cqw, 1000px)"><div class="browser__bar"><i></i><i></i><i></i><span>zineps.com</span></div><img src="../../assets/img/projects/zineps/ai.jpg" width="2000" height="897" loading="lazy" decoding="async" alt="The Shipping AI section beside four carrier options for Amsterdam to Milan."></figure>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- IA -->
+    <section class="sec" data-view aria-labelledby="ia">
+      <h2 class="duo sec__head" id="ia" data-reveal><span>Information</span><span>Architecture</span></h2>
+      <div class="panel ia" data-reveal style="--d:100">
+        <div class="ia__chain">
+          <span class="ia__node ia__node--root">zineps.com</span>
+          <span class="ia__stem"></span>
+          <span class="ia__node">Announcement&ensp;·&ensp;Navigation</span>
+          <span class="ia__stem"></span>
+        </div>
+        <div class="ia__cols" style="--n:6">
+          <div class="ia__col"><span class="ia__node">Hero</span><span class="ia__leaf">Headline</span><span class="ia__leaf">Get started</span><span class="ia__leaf">Live dashboard</span><span class="ia__leaf">Six views</span></div>
+          <div class="ia__col"><span class="ia__node">Proof</span><span class="ia__leaf">Partners</span><span class="ia__leaf">Countries</span><span class="ia__leaf">Methods</span></div>
+          <div class="ia__col"><span class="ia__node">Merchants</span><span class="ia__leaf">Parcels</span><span class="ia__leaf">Freight</span></div>
+          <div class="ia__col"><span class="ia__node">Partners</span><span class="ia__leaf">Features</span><span class="ia__leaf">Partner call to action</span></div>
+          <div class="ia__col"><span class="ia__node">Product</span><span class="ia__leaf">Shipping AI</span><span class="ia__leaf">Platform grid</span></div>
+          <div class="ia__col"><span class="ia__node">Start</span><span class="ia__leaf">Three steps</span><span class="ia__leaf">Questions</span><span class="ia__leaf">Final call</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESPONSIVE -->
+    <section class="sec" data-view aria-labelledby="responsive">
+      <h2 class="display sec__head" id="responsive" data-reveal><span>One page,</span><span class="q">every screen.</span></h2>
+      <div data-reveal style="--d:150">
+        <div class="hero hero--plain" aria-label="The redesign on a laptop and two phones">
+          <div class="hero__layer" style="--x:6%; --y:12%; --mx:4%; --my:8%">
+            <div class="laptop" style="--w:60cqw; --mw:92cqw"><div class="laptop__lid"><div class="laptop__screen"><img src="../../assets/img/projects/zineps/light.jpg" width="2000" height="1250" loading="lazy" decoding="async" alt="The homepage in the warm light theme."></div></div><div class="laptop__base"></div></div>
+          </div>
+          <div class="hero__layer" style="--x:63%; --y:14%; --pw:15cqw; --mx:20%; --my:46%; --mpw:30cqw">
+            <div class="phone phone--dark"><div class="phone__screen"><span class="phone__bar"><b>9:41</b><i></i></span><img src="../../assets/img/projects/zineps/mobile-dashboard.jpg" width="780" height="1688" loading="lazy" decoding="async" alt="On a phone: recent shipments, shipment volume and top carriers."></div></div>
+          </div>
+          <div class="hero__layer" style="--x:80%; --y:24%; --pw:15cqw; --mx:56%; --my:52%; --mpw:30cqw">
+            <div class="phone phone--dark"><div class="phone__screen"><span class="phone__bar"><b>9:41</b><i></i></span><img src="../../assets/img/projects/zineps/mobile-proof.jpg" width="780" height="1688" loading="lazy" decoding="async" alt="On a phone: “Their buying power becomes yours.” with the network figures."></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THEMES -->
+    <section class="sec" data-view aria-labelledby="themes">
+      <h2 class="duo sec__head" id="themes" data-reveal><span>Two</span><span>Themes</span></h2>
+      <div class="pair">
+        <figure data-reveal><div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>zineps.com</span></div><img src="../../assets/img/projects/zineps/hero.jpg" width="2000" height="1250" loading="lazy" decoding="async" alt="The homepage in the navy theme."></div><figcaption class="mono">Navy, the default</figcaption></figure>
+        <figure data-reveal style="--d:100"><div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>zineps.com</span></div><img src="../../assets/img/projects/zineps/light.jpg" width="2000" height="1250" loading="lazy" decoding="async" alt="The same homepage in the warm light theme, with a deep forest green accent."></div><figcaption class="mono">Warm light, one click away</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- WALKTHROUGH -->
+    <section class="sec" data-view aria-labelledby="walk">
+      <h2 class="sr-only" id="walk">Walkthrough</h2>
+      <div class="marquee" aria-hidden="true"><div class="marquee__track">
+        <span>Ship smarter <i>✦</i></span><span>Ship smarter <i>✦</i></span><span>Ship smarter <i>✦</i></span><span>Ship smarter <i>✦</i></span>
+        <span>Ship smarter <i>✦</i></span><span>Ship smarter <i>✦</i></span><span>Ship smarter <i>✦</i></span><span>Ship smarter <i>✦</i></span>
+      </div></div>
+
+      <div class="walk walk--wide">
+        <div class="walk__step" data-reveal>
+          <div class="walk__shot"><figure class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>zineps.com</span></div><img src="../../assets/img/projects/zineps/product.jpg" width="2000" height="1972" loading="lazy" decoding="async" alt="The hero dashboard with six views to click through."></figure></div>
+          <div class="walk__note"><span class="mono">01&ensp;Hero</span><h3>Show the product, not a picture of it</h3><p>The hero holds a working dashboard. Visitors switch between six views and search the shipments, so the product explains itself before the copy has to.</p></div>
+        </div>
+        <div class="walk__step walk__step--flip" data-reveal>
+          <div class="walk__shot"><figure class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>zineps.com</span></div><img src="../../assets/img/projects/zineps/proof.jpg" width="2000" height="962" loading="lazy" decoding="async" alt="“Their buying power becomes yours.” with three network figures."></figure></div>
+          <div class="walk__note"><span class="mono">02&ensp;Proof</span><h3>Proof straight after the promise</h3><p>Three plain numbers say how big the network is, each with one line on what it means for a shop.</p></div>
+        </div>
+        <div class="walk__step" data-reveal>
+          <div class="walk__shot"><figure class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>zineps.com</span></div><img src="../../assets/img/projects/zineps/audiences.jpg" width="2000" height="1029" loading="lazy" decoding="async" alt="“Two ways businesses ship.” with parcels and freight."></figure></div>
+          <div class="walk__note"><span class="mono">03&ensp;Audiences</span><h3>Two audiences, one page</h3><p>Parcels and freight sit side by side for merchants, and logistics providers get a section of their own, written to them.</p></div>
+        </div>
+        <div class="walk__step walk__step--flip" data-reveal>
+          <div class="walk__shot"><figure class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>zineps.com</span></div><img src="../../assets/img/projects/zineps/ai.jpg" width="2000" height="897" loading="lazy" decoding="async" alt="Shipping AI: four carrier options for one lane."></figure></div>
+          <div class="walk__note"><span class="mono">04&ensp;Shipping AI</span><h3>AI as a real decision</h3><p>One lane, four carrier options, labelled recommended, fastest, cheapest or your own contract. Picking one shows the trade-off.</p></div>
+        </div>
+        <div class="walk__step" data-reveal>
+          <div class="walk__shot"><figure class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>zineps.com</span></div><img src="../../assets/img/projects/zineps/platform.jpg" width="2000" height="1932" loading="lazy" decoding="async" alt="A grid of small working visuals for each feature."></figure></div>
+          <div class="walk__note"><span class="mono">05&ensp;Platform</span><h3>Everything at a glance</h3><p>Features as small, working visuals rather than icons and bullet points: a cost trend, a map of destinations, integrations, uptime and address checks.</p></div>
+        </div>
+        <div class="walk__step walk__step--flip" data-reveal>
+          <div class="walk__shot"><figure class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>zineps.com</span></div><img src="../../assets/img/projects/zineps/how.jpg" width="2000" height="837" loading="lazy" decoding="async" alt="“Live in an afternoon.” with three steps."></figure></div>
+          <div class="walk__note"><span class="mono">06&ensp;Start</span><h3>Make starting feel small</h3><p>Connect, match and ship, each with how long it takes, then the questions people ask before they commit.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTCOME -->
+    <section class="sec" data-view aria-labelledby="outcome">
+      <div class="finale">
+        <h2 class="display display--center" id="outcome" data-reveal><span>A working redesign,</span><span class="q">not a mockup.</span></h2>
+        <p class="body" data-reveal style="--d:120">A complete, responsive page built in HTML, CSS and JavaScript. Every view in the hero dashboard works, the menus open and close from the keyboard, the theme can be switched, and motion is toned down for anyone whose device asks for less.</p>
+        <a class="cta" href="site/" target="_blank" rel="noopener" data-reveal style="--d:200">Open the live redesign&ensp;↗</a>
+      </div>
+    </section>
+
+    <nav class="st-end micro" aria-label="Projects">
+      <a class="u" href="../#projects">←&ensp;Back to projects</a>
+      <a class="u" href="#top" data-top>Back to top&ensp;↑</a>
+    </nav>
+  </main>
+
+  <script src="../../assets/js/site.js?v=91" defer></script>
+  <script src="../../assets/js/page.js?v=92" defer></script>
+  <script>
+    // "Back to top"
+    document.querySelector('[data-top]').addEventListener('click', (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); });
+  </script>
+</body>
+</html>

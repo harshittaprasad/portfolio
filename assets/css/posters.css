@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Project posters (built by assets/js/posters.js).
+
+   A halftone field on a canvas, the project's title over it in a contrast
+   colour, small labels in the corners and a list scrolling up the right
+   edge, in a deep shade of the dots; the band of dots dissolves into specks
+   under the list so it reads. At rest it is a still; pointing at the card
+   plays it, and leaving brings it back.
+
+   Everything is sized in cqw / cqh of the poster, so it scales to any card.
+   ========================================================================== */
+
+.poster {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  container-type: size;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--bg, #EEE);
+  font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  pointer-events: none;
+}
+
+.poster__art { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+/* ---------- the title ---------- */
+
+.poster__head {
+  position: absolute;
+  z-index: 3;
+  left: 3.4cqw;
+  top: 50%;
+  margin: 0;
+  transform: translateY(-50%);
+  color: var(--head);
+  font-size: var(--fs, 14cqh);
+  font-weight: 700;
+  line-height: .86;
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+}
+.poster__line { display: block; white-space: nowrap; }
+.poster__ch.is-off { visibility: hidden; }
+
+/* a block caret while the title types itself out */
+.poster__caret {
+  display: none;
+  width: .08em;
+  height: .72em;
+  margin-left: .06em;
+  background: currentColor;
+  vertical-align: -.02em;
+  animation: poster-blink .9s steps(1) infinite;
+}
+.poster__head.is-typing .poster__caret { display: inline-block; }
+@keyframes poster-blink { 50% { opacity: 0; } }
+
+/* ---------- small labels and the list ---------- */
+
+.poster__list,
+.poster__lbl { color: var(--text); }
+
+.poster__list {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 13cqh;
+  right: 2.6cqw;
+  width: 21cqw;
+  overflow: hidden;
+  text-align: right;
+  font-size: 2.55cqh;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -.005em;
+  -webkit-mask: linear-gradient(#000 82%, transparent);
+  mask: linear-gradient(#000 82%, transparent);
+}
+.poster__track { animation: poster-scroll 18s linear infinite paused; }
+.poster__track ul { margin: 0; padding: 0 0 6cqh; list-style: none; }
+@keyframes poster-scroll {
+  from { transform: translateY(38cqh); }
+  to   { transform: translateY(calc(38cqh - 50%)); }
+}
+
+.poster__lbl {
+  position: absolute;
+  z-index: 4;
+  margin: 0;
+  font-size: 2.35cqh;
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: .005em;
+  text-transform: uppercase;
+}
+.poster__lbl--tl { left: 2.6cqw; top: 4.4cqh; }
+.poster__lbl--tr { right: 2.6cqw; top: 4.4cqh; text-align: right; }
+.poster__lbl--bl { left: 2.6cqw; bottom: 4.4cqh; }
+.poster__lbl--br { right: 2.6cqw; bottom: 4.4cqh; text-align: right; }
+
+/* on the Work page: the live poster replaces the still picture, and the old
+   negative-on-hover effect stays off */
+.proj__media.has-poster img { visibility: hidden; }
+.proj__media.has-poster::after { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .poster__caret { animation: none; }
+}

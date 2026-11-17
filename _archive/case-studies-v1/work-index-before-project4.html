@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en" class="page-work">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Work &amp; About | Harshita Prasad</title>
+  <meta name="description" content="Harshita Prasad, UX designer: selected projects, and a little about me.">
+  <meta name="theme-color" content="#0C0C0B">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Fragment+Mono&display=swap">
+  <link rel="stylesheet" href="../assets/css/base.css?v=94">
+  <link rel="stylesheet" href="../assets/css/work.css?v=98">
+  <link rel="stylesheet" href="../assets/css/about.css?v=91">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <header class="site-header micro">
+    <a class="u" href="../" data-nav>Harshita Prasad</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="u" href="#work" aria-current="page">Work</a>
+      <a class="u" href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- WORK. The page opens on one folder in the middle. Click it and it opens:
+         the four sheets inside rise out and each flies to its place in the grid
+         as that project's cover (assets/js/work.js). Without JavaScript the
+         projects simply show.
+
+         Each project is one <li class="proj">: a picture, a name and a few tags.
+         These four are placeholders. For each one, swap the picture
+         (assets/img/projects/project-1.jpg and so on), the name and the tags,
+         and give its <a> an href to link it. The sheets in the folder use the
+         same pictures, in the same order as the projects. -->
+    <section class="work" id="work" aria-labelledby="work-title">
+
+      <div class="desk">
+        <button class="desk__folder" type="button" aria-expanded="false" aria-controls="project-list">
+          <span class="desk__art" aria-hidden="true">
+            <svg class="desk__back" viewBox="0 0 120 96">
+              <defs>
+                <linearGradient id="desk-back" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#4ea6ee"/><stop offset="1" stop-color="#2c7fd2"/>
+                </linearGradient>
+              </defs>
+              <path d="M6 15a7 7 0 0 1 7-7h29l9 9h56a7 7 0 0 1 7 7v57a7 7 0 0 1-7 7H13a7 7 0 0 1-7-7z" fill="url(#desk-back)"/>
+            </svg>
+            <img class="desk__sheet" src="../assets/img/projects/project-1.jpg?v=6" alt="" width="1980" height="1125" style="--i:0; --fx:-46%; --fr:-7deg">
+            <img class="desk__sheet" src="../assets/img/projects/project-2.jpg?v=6" alt="" width="1980" height="1125" style="--i:1; --fx:16%; --fr:2.5deg">
+            <img class="desk__sheet" src="../assets/img/projects/project-3.jpg?v=6" alt="" width="1980" height="1125" style="--i:2; --fx:-16%; --fr:-2.5deg">
+            <img class="desk__sheet" src="../assets/img/projects/project-4.jpg" alt="" width="1320" height="750" style="--i:3; --fx:46%; --fr:7deg">
+            <svg class="desk__front" viewBox="0 0 120 96">
+              <defs>
+                <linearGradient id="desk-front" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#93d2ff"/><stop offset="1" stop-color="#5cb1f1"/>
+                </linearGradient>
+              </defs>
+              <path d="M3 32a7 7 0 0 1 7-7h100a7 7 0 0 1 7 7v50a7 7 0 0 1-7 7H10a7 7 0 0 1-7-7z" fill="url(#desk-front)"/>
+              <path d="M10 26.5h100" stroke="#d2edff" stroke-width="1.5" stroke-linecap="round" opacity=".85"/>
+            </svg>
+          </span>
+          <span class="desk__label micro">Projects</span>
+        </button>
+      </div>
+
+      <div class="shelf" id="project-list">
+        <div class="shelf__head">
+          <h1 class="shelf__title" id="work-title" tabindex="-1">projects</h1>
+          <p class="shelf__lede">A few things I’ve designed, researched and obsessed over, and these are some of my favourites</p>
+        </div>
+
+        <ul class="shelf__grid">
+          <li class="proj">
+            <a class="proj__link" href="flowledger/">
+              <span class="proj__media"><img src="../assets/img/projects/project-1.jpg?v=6" alt="" width="1980" height="1125" loading="lazy" decoding="async"></span>
+              <span class="proj__meta"><span class="proj__name">FlowLedger</span><span class="proj__tags">Mobile&ensp;app&ensp;Fintech&ensp;AI</span></span>
+            </a>
+          </li>
+          <li class="proj">
+            <a class="proj__link" href="zineps/">
+              <span class="proj__media"><img src="../assets/img/projects/project-2.jpg?v=6" alt="" width="1980" height="1125" loading="lazy" decoding="async"></span>
+              <span class="proj__meta"><span class="proj__name">Zineps</span><span class="proj__tags">Website&ensp;redesign&ensp;Product&ensp;UI</span></span>
+            </a>
+          </li>
+          <li class="proj">
+            <a class="proj__link" href="inclusivity/">
+              <span class="proj__media"><img src="../assets/img/projects/project-3.jpg?v=6" alt="" width="1980" height="1125" loading="lazy" decoding="async"></span>
+              <span class="proj__meta"><span class="proj__name">Redesigning Inclusivity</span><span class="proj__tags">Research&ensp;paper&ensp;Neuroinclusive&ensp;UX</span></span>
+            </a>
+          </li>
+          <li class="proj">
+            <a class="proj__link">
+              <span class="proj__media"><img src="../assets/img/projects/project-4.jpg" alt="" width="1320" height="750" loading="lazy" decoding="async"></span>
+              <span class="proj__meta"><span class="proj__name">Project Four</span><span class="proj__tags">Brand&ensp;identity</span></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ABOUT ME. Each <span class="ln"> is one line and is spread across the
+         full column width, so short lines get wide gaps. A line marked
+         ln--para starts a new paragraph. Everything here fades in once the
+         section scrolls into view. -->
+    <section class="letter" id="about" data-view aria-labelledby="about-title">
+      <h2 class="sr-only" id="about-title">About me</h2>
+
+      <div class="letter__meta micro" data-reveal style="--d:200">
+        <p class="micro--quiet">(&ensp;About me&ensp;)</p>
+        <p>Harshita Prasad<br>UX Designer<br>Est. 2005</p>
+        <ul class="letter__links">
+          <li><a class="u" href="mailto:hello@harshitaprasad.com">Email</a></li>
+          <li><a class="u" href="https://www.linkedin.com/in/harshitaprasad" target="_blank" rel="noopener">LinkedIn&thinsp;↗</a></li>
+          <li><a class="u" href="../assets/resume.pdf" target="_blank" rel="noopener">Résumé&thinsp;↗</a></li>
+        </ul>
+      </div>
+
+      <span class="letter__rule" aria-hidden="true"></span>
+
+      <figure class="letter__photo" data-reveal style="--d:500">
+        <img src="../assets/img/portrait.jpg?v=3" width="1051" height="1100" loading="lazy" decoding="async"
+             alt="Harshita Prasad, a close-up portrait in soft light.">
+      </figure>
+
+      <div class="letter__text">
+        <p class="letter__body" data-stagger="65" data-stagger-start="350">
+          <span class="ln" data-reveal>I’ve always been a little too curious</span>
+          <span class="ln" data-reveal>for my own good. I like asking</span>
+          <span class="ln" data-reveal>why things work the way they do,</span>
+          <span class="ln" data-reveal>noticing the details people usually</span>
+          <span class="ln" data-reveal>skip over, and occasionally taking</span>
+          <span class="ln" data-reveal>the long way around just to see</span>
+          <span class="ln" data-reveal>where it goes.</span>
+          <span class="ln ln--para" data-reveal>Now, I do that through UX —</span>
+          <span class="ln" data-reveal>part research, part problem-solving,</span>
+          <span class="ln" data-reveal>part making things feel a little more</span>
+          <span class="ln" data-reveal>obvious than they did before.</span>
+          <span class="ln" data-reveal>I’m drawn to human behaviour, thoughtful</span>
+          <span class="ln" data-reveal>interactions, and the tiny decisions</span>
+          <span class="ln" data-reveal>that can make an experience click.</span>
+          <span class="ln ln--para" data-reveal>Somewhere between the kid who was</span>
+          <span class="ln" data-reveal>endlessly curious and the designer</span>
+          <span class="ln" data-reveal>I’m becoming, I’m still figuring</span>
+          <span class="ln" data-reveal>things out —</span>
+          <span class="ln" data-reveal>just with better fonts now.</span>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../assets/js/site.js?v=91" defer></script>
+  <script src="../assets/js/page.js?v=92" defer></script>
+  <script src="../assets/js/work.js?v=97" defer></script>
+</body>
+</html>

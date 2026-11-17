@@ -1,0 +1,234 @@
+/* ==========================================================================
+   Base: tokens, reset, micro type, header/nav, grain, star cursor, entrances.
+   Shared by every page (Home, Work, About).
+
+   Every page is the same dark room: near-black, warm light type, film grain
+   and a soft lamp that follows the pointer. One serif for display, one
+   grotesk for the small print, and a single ochre accent taken from the star
+   in the portrait.
+   ========================================================================== */
+
+:root {
+  --ink: #0C0C0B;            /* the room */
+  --bone: #ECE7DE;           /* type */
+  --ash: #8E8981;            /* quiet type */
+  --ochre: #B08236;          /* the one accent */
+
+  --font-serif: "Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
+  --font-sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --pad: clamp(16px, 2.3vw, 34px);
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --vh: 1vh;
+
+  --bg: var(--ink);
+  --fg: var(--bone);
+  --fg-2: var(--ash);
+
+  color-scheme: dark;
+}
+@supports (height: 1dvh) {
+  :root { --vh: 1dvh; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { margin: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  min-height: calc(var(--vh) * 100);
+  background-color: var(--bg);
+  /* barely-there vignette: the middle is a touch lighter than the edges */
+  background-image: radial-gradient(120% 90% at 50% 34%, #151514 0%, var(--ink) 58%, #070706 100%);
+  background-attachment: fixed;
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; text-decoration: none; }
+p, figure, h1, h2, ul, ol, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; }
+
+::selection { background: var(--fg); color: var(--bg); }
+:focus-visible { outline: 1px solid currentColor; outline-offset: 5px; }
+
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Small print: the uppercase grotesk used in every corner ---------- */
+
+.micro {
+  font-family: var(--font-sans);
+  font-size: clamp(11px, .8vw, 12.5px);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+}
+.micro--quiet { color: var(--fg-2); }
+
+/* underline that draws in from the left on hover */
+.u {
+  position: relative;
+  display: inline-block;
+}
+.u::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform .6s var(--ease);
+}
+.u:hover::after,
+.u:focus-visible::after,
+.u[aria-current="page"]::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 30;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--pad);
+  pointer-events: none;
+}
+.site-header > * { pointer-events: auto; }
+/* once something scrolls under the header, fade it into the dark there */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 -24px;
+  z-index: -1;
+  background: linear-gradient(var(--ink) 35%, rgba(12, 12, 11, 0));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+.is-scrolled .site-header::before { opacity: 1; }
+
+.site-nav {
+  display: flex;
+  gap: clamp(18px, 2.4vw, 40px);
+  margin-left: auto;
+}
+
+/* ---------- Grain: fixed, non-interactive, never repaints on scroll ---------- */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  opacity: .5;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .32 -.15'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ---------- Lamp: a soft pool of light that trails the pointer (site.js) ---------- */
+
+.lamp {
+  position: fixed;
+  inset: 0;
+  z-index: 35;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: screen;
+  background: radial-gradient(circle 34vmax at var(--mx, 50%) var(--my, 38%),
+              rgba(236, 231, 222, .07), rgba(236, 231, 222, .02) 45%, transparent 70%);
+  transition: opacity 1.8s ease;
+}
+.lamp.is-lit { opacity: 1; }
+
+/* ---------- Star cursor (fine pointers only; added by site.js) ---------- */
+
+.has-cursor, .has-cursor * { cursor: none !important; }
+
+.cursor {
+  position: fixed;
+  left: 0; top: 0;
+  z-index: 100;
+  pointer-events: none;
+  color: #fff;
+  mix-blend-mode: difference;
+  opacity: 0;
+  transition: opacity .3s ease;
+  will-change: transform;
+}
+.cursor.is-visible { opacity: 1; }
+
+.cursor__magnet {
+  position: absolute;
+  left: 0; top: 0;
+  transition: transform .28s var(--ease);
+}
+.cursor__star {
+  position: absolute;
+  left: -7.5px; top: -7.5px;
+  width: 15px; height: 15px;
+  transition: transform .4s var(--ease);
+}
+.cursor__star svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.cursor__star polygon { fill: currentColor; }
+.cursor[data-state="link"] .cursor__star { transform: scale(1.5) rotate(36deg); }
+
+/* ---------- Entrances: things surface slowly, as if out of the dark ---------- */
+
+.js [data-reveal] {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(.18em);
+}
+.js .is-ready [data-reveal],
+.js.is-ready [data-reveal] {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+  transition:
+    opacity 1.4s var(--ease) calc(var(--d, 0) * 1ms),
+    filter 1.6s var(--ease) calc(var(--d, 0) * 1ms),
+    transform 1.6s var(--ease) calc(var(--d, 0) * 1ms);
+}
+
+/* inside a [data-view] section, things wait until the section scrolls into view (page.js) */
+html.js [data-view]:not(.is-in) [data-reveal] {
+  opacity: 0;
+  filter: blur(8px);
+  transition: none;
+}
+
+/* ---------- Page transitions (cross-document View Transitions) ---------- */
+
+@view-transition { navigation: auto; }
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: .6s; }
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  html { scroll-behavior: auto; }
+  html.js [data-view]:not(.is-in) [data-reveal] { opacity: 1; filter: none; }
+  .js [data-reveal] { opacity: 1; filter: none; transform: none; transition: none !important; }
+  .cursor__star, .cursor__magnet { transition: none; }
+}

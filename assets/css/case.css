@@ -1,0 +1,343 @@
+/* ==========================================================================
+   Case study pages (work/<project>/). Same dark room as the rest of the site,
+   set like the Work page: a big title with a line on the right, the project
+   facts in a row, then numbered sections with a label on the left and the
+   writing and screenshots on the right.
+   ========================================================================== */
+
+.case {
+  --font-mono: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --text: rgba(236, 231, 222, .8);
+  --rule: rgba(236, 231, 222, .14);
+  padding: calc(var(--pad) + 112px) var(--pad) calc(var(--pad) + 24px);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 11.2px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+/* ---------- title ---------- */
+
+.case__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+}
+.case__eyebrow { margin-bottom: 18px; }
+.case__title {
+  margin-left: -.05em;
+  font-family: var(--font-sans);
+  font-size: clamp(76px, 11vw, 176px);
+  font-weight: 600;
+  line-height: .84;
+  letter-spacing: -.055em;
+}
+.case__lede {
+  max-width: 360px;
+  margin-bottom: .6em;
+  font-size: 17px;
+  line-height: 1.4;
+  text-align: right;
+}
+
+.case__meta {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: space-between;
+  gap: 20px;
+  margin: 44px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
+.case__meta dt { margin-bottom: 6px; }
+.case__meta dd { margin: 0; font-size: 15px; }
+
+/* ---------- screenshots ---------- */
+
+.shot { margin: 36px 0 0; }
+.shot img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  outline: 1px solid var(--rule);
+  outline-offset: -1px;
+  background: #07121F;
+}
+.shot figcaption { margin-top: 12px; }
+.shot--hero { margin-top: 28px; }
+
+.shot-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* ---------- numbered sections ---------- */
+
+.block {
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) 2.4fr;
+  gap: 40px;
+  padding-top: clamp(96px, 11vw, 160px);
+}
+.block__label {
+  position: sticky;
+  top: calc(var(--pad) + 76px);
+  align-self: start;
+  color: var(--fg);
+}
+.block__body { min-width: 0; }
+.block__body h2 {
+  max-width: 19ch;
+  font-family: var(--font-sans);
+  font-size: clamp(30px, 3.3vw, 48px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -.03em;
+}
+.block__body > p {
+  max-width: 62ch;
+  margin-top: 1.15em;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.points { margin-top: 32px; max-width: 70ch; }
+.points li {
+  padding: 18px 0;
+  border-top: 1px solid var(--rule);
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.points li:last-child { border-bottom: 1px solid var(--rule); }
+.points strong { font-weight: 500; color: var(--fg); }
+
+/* the six decisions */
+.decision { margin-top: clamp(64px, 7vw, 104px); }
+.decision h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  font-family: var(--font-sans);
+  font-size: clamp(22px, 1.9vw, 28px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+.decision h3 .mono { color: var(--ochre); }
+.decision > p {
+  max-width: 62ch;
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+/* ---------- design system ---------- */
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 28px 20px;
+  margin-top: 40px;
+}
+.swatches li { display: grid; gap: 6px; }
+.swatch {
+  display: block;
+  aspect-ratio: 1.5;
+  border-radius: 10px;
+  background: var(--c);
+  outline: 1px solid var(--rule);
+  outline-offset: -1px;
+}
+.swatches b, .specimen b { margin-top: 6px; font-weight: 500; font-size: 15px; }
+
+/* the type and corner cards take the project's own colours from these
+   (set them on .case); the defaults are Zineps' navy and mint */
+
+.specimens {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 40px 0 8px;
+}
+.specimen {
+  display: grid;
+  gap: 6px;
+  align-content: end;
+  min-height: 210px;
+  padding: 22px;
+  border-radius: 10px;
+  background: var(--spec-bg, #10283D);
+  color: var(--spec-fg, #F1F5F3);
+}
+.specimen .mono { color: var(--spec-quiet, var(--fg-2)); }
+.specimen__aa {
+  align-self: start;
+  margin-bottom: auto;
+  font-size: 84px;
+  line-height: 1;
+  color: var(--spec-fg, #F1F5F3);
+}
+.specimen--outfit .specimen__aa { font-family: "Outfit", var(--font-sans); font-weight: 600; letter-spacing: -.04em; }
+.specimen--inter .specimen__aa { font-family: "Inter Tight", var(--font-sans); font-weight: 400; letter-spacing: -.02em; }
+.radii { display: flex; gap: 10px; margin-bottom: auto; }
+.radii i {
+  display: block;
+  width: 52px;
+  height: 52px;
+  border: 1.5px solid var(--spec-accent, #62E6D0);
+  border-radius: var(--r);
+}
+
+/* app screens, shown as phones in a row: <figure class="screens"><div class="phones"> */
+.screens { margin: 36px 0 0; }
+.screens figcaption { margin-top: 12px; }
+.phones {
+  display: grid;
+  grid-template-columns: repeat(var(--n, 3), minmax(0, 290px));
+  justify-content: center;
+  gap: clamp(14px, 2vw, 28px);
+  padding: clamp(24px, 4vw, 56px);
+  border-radius: 10px;
+  background: var(--stage, #1A1917);
+}
+.phones img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 680 / 1434;
+  border-radius: 9% / 4.3%;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .25), 0 26px 50px -24px rgba(0, 18, 90, .6);
+  background: #F8FAFC;
+}
+
+
+/* ---------- research pages: chips, cards, a pull quote ---------- */
+
+/* labels in a row; --on is "well covered", --gap is "left out" */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+.chip {
+  padding: 9px 16px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  font-size: 15px;
+  line-height: 1.2;
+  color: var(--text);
+}
+.chip--on { border-color: transparent; background: rgba(236, 231, 222, .14); color: var(--fg); }
+.chip--gap { border: 1px dashed var(--ochre); color: var(--fg); }
+.chips-key { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 14px; }
+.chips-key span::before {
+  content: "";
+  display: inline-block;
+  width: 9px; height: 9px;
+  margin-right: 8px;
+  border-radius: 50%;
+  vertical-align: -1px;
+  background: rgba(236, 231, 222, .3);
+}
+.chips-key .is-gap::before { background: none; border: 1px dashed var(--ochre); }
+
+/* cards in a row: phases, measures, principles */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 36px;
+}
+.card {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 24px 24px 28px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: rgba(236, 231, 222, .035);
+}
+.card .mono { color: var(--ochre); }
+.card h4 {
+  font-family: var(--font-sans);
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -.015em;
+}
+.card p { font-size: 15.5px; line-height: 1.5; color: var(--text); }
+.card__big {
+  font-family: var(--font-sans);
+  font-size: clamp(44px, 4.4vw, 64px);
+  font-weight: 600;
+  line-height: .95;
+  letter-spacing: -.04em;
+}
+.card .card__who {
+  margin-top: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--rule);
+  font-size: 11.2px;
+  line-height: 1.45;
+  color: var(--fg-2);
+}
+
+/* a line from the work itself, set large in the serif */
+.quote {
+  max-width: 21ch;
+  margin: clamp(64px, 7vw, 104px) 0 0;
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 4.4vw, 64px);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -.01em;
+}
+.quote cite { display: block; margin-top: 18px; font-style: normal; }
+
+/* ---------- the end ---------- */
+
+.block__body > .case__live { margin-top: 36px; }
+.case__live a {
+  font-family: var(--font-sans);
+  font-size: clamp(26px, 2.6vw, 38px);
+  font-weight: 500;
+  letter-spacing: -.02em;
+  color: var(--fg);
+}
+
+.case__end {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: clamp(96px, 11vw, 160px);
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+}
+
+/* ---------- phones ---------- */
+
+@media (max-width: 760px) {
+  .case { padding-top: calc(var(--pad) + 92px); }
+  .case__head { flex-direction: column; align-items: stretch; gap: 28px; }
+  .case__lede { text-align: left; margin: 0; }
+  .case__meta { grid-template-columns: 1fr 1fr; row-gap: 22px; }
+  .block { grid-template-columns: 1fr; gap: 18px; }
+  .block__label { position: static; }
+  .shot-pair, .specimens { grid-template-columns: 1fr; }
+  .phones { --n: 2 !important; }
+  .cards { grid-template-columns: 1fr; }
+  .swatches { grid-template-columns: 1fr 1fr; gap: 22px 14px; }
+  .specimen { min-height: 170px; }
+  .radii { gap: 8px; }
+  .radii i { width: 40px; height: 40px; }
+}

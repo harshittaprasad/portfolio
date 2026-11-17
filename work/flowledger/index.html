@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en" class="page-case">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FlowLedger | Harshita Prasad</title>
+  <meta name="description" content="FlowLedger: an AI-assisted personal finance app that records spending on its own, splits bills with friends and explains your month in plain language. A case study by Harshita Prasad.">
+  <meta name="theme-color" content="#0C0C0B">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Fragment+Mono&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../../assets/css/base.css?v=94">
+  <link rel="stylesheet" href="../../assets/css/study.css?v=6">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <header class="site-header micro">
+    <a class="u" href="../../" data-nav>Harshita Prasad</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="u" href="../#projects" aria-current="page">Work</a>
+      <a class="u" href="../#about">About</a>
+    </nav>
+  </header>
+
+  <!-- FLOWLEDGER CASE STUDY, presentation style (assets/css/study.css).
+       Phone screens are screenshots of the live app (flowledger-ai.vercel.app)
+       in assets/img/projects/flowledger/. The white cards floating over the
+       phones are rebuilt in HTML (.fl-*), with the app's own numbers. -->
+  <main class="study" style="--acc:#3D8BFF">
+
+    <!-- TITLE + HERO -->
+    <div class="st-title">
+      <div>
+        <p class="mono" data-reveal style="--d:150">Case study&ensp;·&ensp;Mobile app&ensp;·&ensp;2026</p>
+        <h1 data-reveal style="--d:250">FlowLedger</h1>
+      </div>
+      <p data-reveal style="--d:450">An AI-assisted money app that records your spending on its own, splits bills with friends and explains your month in plain language.</p>
+    </div>
+
+    <div data-reveal style="--d:600">
+      <section class="hero" aria-label="FlowLedger screens">
+        <div class="tags tags--l"><span class="tag tag--k">category</span><span class="tag">Fintech &amp; AI</span></div>
+        <div class="tags tags--c"><span class="tag tag--k">platform</span><span class="tag">Mobile web</span></div>
+        <div class="tags tags--r"><span class="tag tag--k">project</span><span class="tag">UX/UI case study</span></div>
+
+        <div class="hero__layer" style="--x:53%; --y:15%; --pw:22cqw; --mx:44%; --my:24%; --mpw:44cqw">
+          <div class="phone tilt-r"><div class="phone__screen"><span class="phone__bar"><b>9:41</b><i></i></span><img src="../../assets/img/projects/flowledger/report.jpg" width="680" height="1434" alt="" fetchpriority="high"></div></div>
+        </div>
+        <div class="hero__layer" style="--x:28%; --y:9%; --pw:24cqw; --mx:6%; --my:13%; --mpw:50cqw">
+          <div class="phone tilt-l"><div class="phone__screen"><span class="phone__bar"><b>9:41</b><i></i></span><img src="../../assets/img/projects/flowledger/home.jpg" width="680" height="1434" alt="FlowLedger home: total net liquidity of $2,658.31 and an AI forecast on track for $150k."></div></div>
+        </div>
+        <div class="hero__layer fl hide-m" style="--x:66%; --y:58%; --f:.95cqw">
+          <div class="fl-card">
+            <p class="fl-k">Total net liquidity <svg viewBox="0 0 24 24" style="stroke:#12A05C"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></p>
+            <p class="fl-big">$2,658.31</p>
+            <div class="fl-row"><p><small>Cash</small><b>$2,658</b></p><p><small>Investments</small><b>$0</b></p><p><small>Digital assets</small><b>$6,500</b></p></div>
+          </div>
+        </div>
+        <div class="hero__layer fl" style="--x:9%; --y:56%; --f:1cqw; --mx:8%; --my:70%; --mf:2.1cqw">
+          <div class="fl-money fl-money--in"><small>You are owed</small><b>$1,598.75</b><span>Across 3 friends</span></div>
+        </div>
+        <div class="hero__layer fl hide-m" style="--x:6%; --y:22%; --f:.9cqw">
+          <div class="fl-alert"><i><svg viewBox="0 0 24 24"><path d="M12 3l10 18H2zM12 10v4M12 17.5h.01"/></svg></i><p><b>High Spending Alert</b><span>Dining out is 24% higher than last week.</span></p></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- PROBLEM -->
+    <section class="sec" data-view aria-labelledby="problem">
+      <h2 class="duo sec__head" id="problem" data-reveal><span>Problem</span><span>Statement</span></h2>
+      <p class="lead lead--wide" data-reveal style="--d:120">People struggle to <b>see where</b> <span class="ic"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span> <span class="ic ic--fill"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span> <b>their money goes</b>, because a balance and a list of payments say what happened, not whether they’re on track.</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="sec" data-view aria-labelledby="about-project">
+      <h2 class="duo sec__head" id="about-project" data-reveal><span>About</span><span>Project</span></h2>
+      <div class="about-p">
+        <div data-reveal style="--d:100">
+          <p class="body">FlowLedger connects to your bank once, then records and categorises every transaction for you. On top of that ledger it adds what a spreadsheet can’t: a forecast towards your goals, alerts when spending drifts, a shared tab with friends, and a monthly report written in plain language.</p>
+          <p class="body" style="margin-top:1em">It’s designed phone-first, for the moments people actually check their money: in a queue, after dinner, just before buying something.</p>
+          <div class="pills"><span class="pill">UX/UI</span><span class="pill">Mobile app</span><span class="pill">Fintech</span><span class="pill">AI</span></div>
+        </div>
+        <dl class="facts" data-reveal style="--d:200">
+          <div><dt class="mono">Project</dt><dd>FlowLedger</dd></div>
+          <div><dt class="mono">Industry</dt><dd>Personal finance &amp; AI</dd></div>
+          <div><dt class="mono">Role</dt><dd>UX &amp; UI design</dd></div>
+          <div><dt class="mono">Platform</dt><dd>Mobile web app</dd></div>
+          <div><dt class="mono">Built with</dt><dd>React</dd></div>
+          <div><dt class="mono">Year</dt><dd>2026</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- BIG LINE + PHONE -->
+    <section class="sec" data-view>
+      <div class="panel panel--soft rise">
+        <h2 class="display" data-reveal><span>Every payment.</span><span class="q">Recorded for you.</span></h2>
+        <div class="rise__device"><div data-reveal style="--d:200">
+          <div class="phone" style="--w:min(46cqw, 400px)"><div class="phone__screen"><span class="phone__bar"><b>9:41</b><i></i></span><img src="../../assets/img/projects/flowledger/list.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Transactions: a search field, category chips and payments grouped by date."></div></div>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- PAIN POINTS -->
+    <section class="sec" data-view aria-labelledby="pain">
+      <h2 class="duo sec__head" id="pain" data-reveal><span>Pain</span><span>Points</span></h2>
+      <div class="pain">
+        <div class="ring" data-reveal style="--d:100" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="52" stroke="rgba(236,231,222,.92)" stroke-dasharray="74 253.7" transform="rotate(-86 60 60)"/>
+            <circle cx="60" cy="60" r="52" stroke="rgba(236,231,222,.62)" stroke-dasharray="74 253.7" transform="rotate(4 60 60)"/>
+            <circle cx="60" cy="60" r="52" stroke="rgba(236,231,222,.38)" stroke-dasharray="74 253.7" transform="rotate(94 60 60)"/>
+            <circle cx="60" cy="60" r="52" stroke="var(--acc)" stroke-dasharray="74 253.7" transform="rotate(184 60 60)"/>
+          </svg>
+          <p class="ring__label"><span>User</span><span>Pain Points</span></p>
+        </div>
+        <ol class="key">
+          <li data-reveal style="--d:150"><span class="mono">01</span><div><b>Numbers without meaning</b><p>A balance and a list of payments say what happened, not whether you’re on track.</p></div></li>
+          <li data-reveal style="--d:220"><span class="mono">02</span><div><b>Money is social</b><p>Dinners, trips and rent get shared, and keeping score with friends is awkward.</p></div></li>
+          <li data-reveal style="--d:290"><span class="mono">03</span><div><b>Small leaks add up</b><p>Subscriptions and recurring bills are easy to forget until they’re charged.</p></div></li>
+          <li data-reveal style="--d:360"><span class="mono">04</span><div><b>It’s personal</b><p>People check their finances in public, so the app has to be discreet.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- STATEMENT -->
+    <section class="sec" data-view>
+      <p class="quote-c" data-reveal>Designed to make money feel calm, FlowLedger records <span class="ic"><svg viewBox="0 0 24 24"><path d="M7 7h12l-3-3M17 17H5l3 3"/></svg></span> <span class="ic ic--fill"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span> every payment on its own, explains your month in plain language, and keeps the maths between friends out of the way.</p>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="sec" data-view aria-labelledby="timeline">
+      <h2 class="duo sec__head" id="timeline" data-reveal><span>Project</span><span>Timeline</span></h2>
+      <ol class="timeline" style="--n:5; --d:100" data-reveal>
+        <li class="step"><div class="step__box"><span class="step__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><p><b>Define</b><span class="mono">Completed</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><p><b>Wireframes</b><span class="mono">Completed</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><p><b>UI design</b><span class="mono">Completed</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><p><b>Built in React</b><span class="mono">Completed</span></p></div></li>
+        <li class="step"><div class="step__box"><span class="step__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><p><b>Live on the web</b><span class="mono">Completed</span></p></div></li>
+      </ol>
+    </section>
+
+    <!-- FOUNDATION -->
+    <section class="sec" data-view aria-labelledby="foundation">
+      <h2 class="duo sec__head" id="foundation" data-reveal><span>Design</span><span>Foundation</span></h2>
+      <div class="orbit" data-reveal style="--d:100">
+        <div class="orbit__arcs" aria-hidden="true">
+          <div class="orbit__arc" style="--s:78cqw; --a:.025">Personal finance</div>
+          <div class="orbit__arc" style="--s:54cqw; --a:.045">Automatic ledger</div>
+          <div class="orbit__arc orbit__arc--core" style="--s:30cqw">AI assistance</div>
+        </div>
+        <div class="orbit__call" style="left:0; top:6%"><b><i>!</i>Smart alerts</b><p>Flags what changed this week: green for good news, red when something needs attention.</p></div>
+        <div class="orbit__call" style="right:0; top:6%"><b><i>✦</i>AI report</b><p>Your month in a sentence first, then the detail, then one concrete next step.</p></div>
+        <div class="orbit__call" style="left:0; top:52%"><b><i>⇆</i>Split with friends</b><p>What you’re owed and what you owe, with one action per friend.</p></div>
+        <div class="orbit__call" style="right:0; top:52%"><b><i>◐</i>Privacy mode</b><p>One tap blurs every balance, for checking your money on a train.</p></div>
+      </div>
+    </section>
+
+    <!-- COMPONENTS -->
+    <section class="sec" data-view aria-labelledby="components">
+      <h2 class="duo sec__head" id="components" data-reveal><span>Key</span><span>Components</span></h2>
+      <div class="bento">
+        <div class="panel span-3 fl" data-reveal>
+          <div class="fl-card">
+            <p class="fl-k">Total net liquidity <svg viewBox="0 0 24 24" style="stroke:#12A05C"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></p>
+            <p class="fl-big">$2,658.31</p>
+            <div class="fl-row"><p><small>Cash</small><b>$2,658</b></p><p><small>Investments</small><b>$0</b></p><p><small>Digital assets</small><b>$6,500</b></p></div>
+          </div>
+        </div>
+        <div class="panel span-3 fl" data-reveal style="--d:100">
+          <div class="fl-card">
+            <p class="fl-k">AI forecast <svg viewBox="0 0 24 24" style="stroke:#0066FF"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01"/></svg></p>
+            <p class="fl-h">On track for $150k</p>
+            <p class="fl-p">Estimated arrival by Oct 12th based on current saving velocity.</p>
+            <div class="fl-bar"><i></i></div>
+            <p class="fl-ends"><b>$142.8k</b><span>$150k goal</span></p>
+          </div>
+        </div>
+        <div class="panel span-2 fl" data-reveal>
+          <div style="display:grid; gap:1em">
+            <div class="fl-money fl-money--in"><small>You are owed</small><b>$1,598.75</b><span>Across 3 friends</span></div>
+            <div class="fl-money fl-money--out"><small>You owe</small><b>$91.00</b><span>To 1 friend</span></div>
+          </div>
+        </div>
+        <div class="panel span-4 fl" data-reveal style="--d:100">
+          <div style="display:grid; gap:1em">
+            <div class="fl-alert"><i><svg viewBox="0 0 24 24"><path d="M12 3l10 18H2zM12 10v4M12 17.5h.01"/></svg></i><p><b>High Spending Alert</b><span>Dining out is 24% higher than last week.</span></p></div>
+            <div class="fl-alert fl-alert--ok"><i><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></i><p><b>Auto-Save Triggered</b><span>Round-ups added $42 to Tesla Fund.</span></p></div>
+            <div class="fl-friend"><i>S</i><div><b>Sarah Chen</b><span>owes you $510.00</span></div><em>Remind</em></div>
+          </div>
+        </div>
+        <div class="panel span-3 fl" data-reveal>
+          <div class="fl-ai">
+            <p class="fl-k"><svg viewBox="0 0 24 24" style="stroke:#0066FF"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01"/></svg>AI summary</p>
+            <p>You’re on track to save <b>$1,240</b> this month, which is <b>12% higher</b> than your average. However, your “Dining” spend is accelerating.</p>
+          </div>
+        </div>
+        <div class="panel span-3 fl" data-reveal style="--d:100">
+          <div class="fl-tabs">
+            <span class="on"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9H4z"/></svg>Home</span>
+            <span><svg viewBox="0 0 24 24"><path d="M7 7h12l-3-3M17 17H5l3 3"/></svg>List</span>
+            <span><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0M16 4.5a3.5 3.5 0 010 7M21.5 20a6.5 6.5 0 00-4-6"/></svg>Split</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Report</span>
+            <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 01-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 010-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 014 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 010 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>Settings</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIG LINE + REPORT -->
+    <section class="sec" data-view>
+      <div class="panel panel--soft rise">
+        <h2 class="display" data-reveal><span>Your month,</span><span><em>explained</em></span><span class="q">in plain language.</span></h2>
+        <div class="rise__device"><div data-reveal style="--d:200">
+          <div class="phone" style="--w:min(46cqw, 400px)"><div class="phone__screen"><span class="phone__bar"><b>9:41</b><i></i></span><img src="../../assets/img/projects/flowledger/report.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="AI report: a plain-language summary, inflow and outflow, and categories over and within budget."></div></div>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- TYPOGRAPHY -->
+    <section class="sec" data-view aria-labelledby="type">
+      <h2 class="duo sec__head" id="type" data-reveal><span>Typography</span><span>Used</span></h2>
+      <div class="panel type-spec" data-reveal style="--d:100">
+        <div class="type-spec__row mono"><span>Typeface</span><span class="type-spec__weights"><span>Regular</span><span>Medium</span><span>Semibold</span><span>Bold</span></span></div>
+        <p class="type-spec__name" style="font-family: Inter, sans-serif; font-weight: 700">Inter</p>
+        <div class="type-spec__set mono"><span>Headings, numbers &amp; interface</span><span>Aa Bb Cc Dd Ee Ff Gg 0123456789 $ % +</span></div>
+      </div>
+      <p class="lead lead--wide" style="margin-top: clamp(48px, 6vw, 90px)" data-reveal>Inter keeps big balances <b>steady</b> <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span> and small labels <b>readable</b>, so the one number that matters always comes first.</p>
+    </section>
+
+    <!-- COLOUR -->
+    <section class="sec" data-view aria-labelledby="colour">
+      <h2 class="duo sec__head" id="colour" data-reveal><span>Color</span><span>Palette</span></h2>
+      <div class="palette" data-reveal style="--d:100" aria-label="Palette: blue #0066FF for actions, ink #111827 for text, slate #F8FAFC for backgrounds and grey #6B7280 for quiet text.">
+        <span class="palette__dot" style="--c:#F8FAFC; left:50%; top:30%"></span>
+        <span class="palette__dot" style="--c:#6B7280; left:37%; top:54%"></span>
+        <span class="palette__dot" style="--c:#111827; left:63%; top:54%"></span>
+        <span class="palette__dot" style="--c:#0066FF; left:50%; top:76%; width:20cqw"></span>
+        <span class="palette__hex" style="left:50%; top:20%">#F8FAFC<small>Background</small></span>
+        <span class="palette__hex" style="left:31%; top:54%">#6B7280<small>Quiet text</small></span>
+        <span class="palette__hex" style="left:69%; top:54%">#111827<small>Text</small></span>
+        <span class="palette__hex" style="left:50%; top:78%">#0066FF<small>Actions</small></span>
+      </div>
+      <div class="semantics" data-reveal style="--d:200">
+        <span style="--c:#10B981"><i></i>#10B981&ensp;On track</span>
+        <span style="--c:#F59E0B"><i></i>#F59E0B&ensp;Watch out</span>
+        <span style="--c:#EF4444"><i></i>#EF4444&ensp;Over budget</span>
+      </div>
+    </section>
+
+    <!-- PRINCIPLES -->
+    <section class="sec" data-view aria-labelledby="principles">
+      <h2 class="duo sec__head" id="principles" data-reveal><span>Design</span><span>Principles</span></h2>
+      <div class="trio">
+        <article data-reveal><span class="num">01</span><div><b>One number first</b><p>Home opens on a single figure, then where it’s heading, then what changed.</p></div></article>
+        <article data-reveal style="--d:100"><span class="num">02</span><div><b>Explain, then show</b><p>The report starts with a sentence rather than a chart, and ends in a next step.</p></div></article>
+        <article data-reveal style="--d:200"><span class="num">03</span><div><b>Discreet by default</b><p>Balances blur in place for anyone checking their money in public.</p></div></article>
+      </div>
+    </section>
+
+    <!-- IA -->
+    <section class="sec" data-view aria-labelledby="ia">
+      <h2 class="duo sec__head" id="ia" data-reveal><span>Information</span><span>Architecture</span></h2>
+      <div class="panel ia" data-reveal style="--d:100">
+        <div class="ia__chain">
+          <span class="ia__node ia__node--root">FlowLedger</span>
+          <span class="ia__stem"></span>
+          <span class="ia__node">Onboarding&ensp;·&ensp;3 slides</span>
+          <span class="ia__stem"></span>
+        </div>
+        <div class="ia__cols" style="--n:5">
+          <div class="ia__col"><span class="ia__node">Home</span><span class="ia__leaf">Net liquidity</span><span class="ia__leaf">AI forecast</span><span class="ia__leaf">Smart alerts</span><span class="ia__leaf">Category budgets</span><span class="ia__leaf">Savings pots</span></div>
+          <div class="ia__col"><span class="ia__node">List</span><span class="ia__leaf">Search</span><span class="ia__leaf">Category chips</span><span class="ia__leaf">Grouped by day</span></div>
+          <div class="ia__col"><span class="ia__node">Split</span><span class="ia__leaf">Overview</span><span class="ia__leaf">Groups</span><span class="ia__leaf">Activity</span><span class="ia__leaf">Add expense</span><span class="ia__leaf">Settle up</span></div>
+          <div class="ia__col"><span class="ia__node">Report</span><span class="ia__leaf">AI summary</span><span class="ia__leaf">Category variance</span><span class="ia__leaf">Six-month trend</span><span class="ia__leaf">Heatmap</span><span class="ia__leaf">Subscriptions</span></div>
+          <div class="ia__col"><span class="ia__node">Settings</span><span class="ia__leaf">Linked accounts</span><span class="ia__leaf">Budgets</span><span class="ia__leaf">Categories</span><span class="ia__leaf">Privacy mode</span><span class="ia__leaf">Export CSV</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAYOUT -->
+    <section class="sec" data-view>
+      <div class="panel panel--soft grid-sec">
+        <div class="grid-sec__phone" data-reveal>
+          <span class="grid-sec__dims mono"><span>Margin</span><span>Content</span><span>Margin</span></span>
+          <div class="phone" style="--w:min(300px, 70vw)"><div class="phone__screen"><span class="phone__bar"><b>9:41</b><i></i></span><img src="../../assets/img/projects/flowledger/home.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Home, with the layout's margins and content column marked over it."><span class="grid-sec__cols" aria-hidden="true"></span></div></div>
+        </div>
+        <h2 class="display display--center" data-reveal style="--d:150"><span>One calm column,</span><span><em>built around</em></span><span class="q">a single number.</span></h2>
+      </div>
+    </section>
+
+    <!-- WALKTHROUGH -->
+    <section class="sec" data-view aria-labelledby="walk">
+      <h2 class="sr-only" id="walk">Walkthrough</h2>
+      <div class="marquee" aria-hidden="true"><div class="marquee__track">
+        <span>Effortless <i>✦</i></span><span>Effortless <i>✦</i></span><span>Effortless <i>✦</i></span><span>Effortless <i>✦</i></span>
+        <span>Effortless <i>✦</i></span><span>Effortless <i>✦</i></span><span>Effortless <i>✦</i></span><span>Effortless <i>✦</i></span>
+      </div></div>
+
+      <div class="walk">
+        <div class="walk__step" data-reveal>
+          <div class="walk__shot"><div class="phone" style="--w:min(270px, 62vw)"><div class="phone__screen"><span class="phone__bar"><b>9:41</b><i></i></span><img src="../../assets/img/projects/flowledger/home-budgets.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Further down home: category budgets as progress bars, and savings pots."></div></div></div>
+          <div class="walk__note"><span class="mono">01&ensp;Home</span><h3>One number, then where it’s heading</h3><p>Total net liquidity first, then an AI forecast towards a savings goal, smart alerts, the budgets left in each category, savings pots and the bills coming up.</p></div>
+        </div>
+        <div class="walk__step walk__step--flip" data-reveal>
+          <div class="walk__shot"><div class="phone" style="--w:min(270px, 62vw)"><div class="phone__screen"><span class="phone__bar"><b>9:41</b><i></i></span><img src="../../assets/img/projects/flowledger/list.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Transactions: a search field, category chips and payments grouped by date."></div></div></div>
+          <div class="walk__note"><span class="mono">02&ensp;List</span><h3>A ledger you can scan</h3><p>Payments grouped by day, each with its category, merchant, time and status. Search and category chips narrow the list in one tap.</p></div>
+        </div>
+        <div class="walk__step" data-reveal>
+          <div class="walk__shot"><div class="phone" style="--w:min(270px, 62vw)"><div class="phone__screen"><span class="phone__bar"><b>9:41</b><i></i></span><img src="../../assets/img/projects/flowledger/split.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Split: $1,598.75 you are owed, $91.00 you owe, and a row per friend with a Remind button."></div></div></div>
+          <div class="walk__note"><span class="mono">03&ensp;Split</span><h3>Splitting without the awkwardness</h3><p>What you’re owed and what you owe, then one row per friend with a single action: Remind, or Pay Up. Groups and a log of who paid what sit one tab away.</p></div>
+        </div>
+        <div class="walk__step walk__step--flip" data-reveal>
+          <div class="walk__shot"><div class="phone" style="--w:min(270px, 62vw)"><div class="phone__screen"><span class="phone__bar"><b>9:41</b><i></i></span><img src="../../assets/img/projects/flowledger/report-insights.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="AI report: a heatmap of October, an annual subscription leak of $1,931.88, and an AI recommendation to cap dining."></div></div></div>
+          <div class="walk__note"><span class="mono">04&ensp;Report</span><h3>A report that explains itself</h3><p>A sentence first, then money in and out, budgets, a six-month trend, a heatmap, the yearly cost of subscriptions, and a recommendation that ends in a next step.</p></div>
+        </div>
+        <div class="walk__step" data-reveal>
+          <div class="walk__shot"><div class="phone" style="--w:min(270px, 62vw)"><div class="phone__screen"><span class="phone__bar"><b>9:41</b><i></i></span><img src="../../assets/img/projects/flowledger/privacy.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Home with privacy mode on: the balances are blurred."></div></div></div>
+          <div class="walk__note"><span class="mono">05&ensp;Privacy</span><h3>Discreet by default</h3><p>The eye in the header blurs every balance in place. The same privacy mode lives in Settings, next to linked accounts, budgets and exporting your data.</p></div>
+        </div>
+        <div class="walk__step walk__step--flip" data-reveal>
+          <div class="walk__shot"><div class="phone" style="--w:min(270px, 62vw)"><div class="phone__screen"><span class="phone__bar"><b>9:41</b><i></i></span><img src="../../assets/img/projects/flowledger/onboarding-2.jpg" width="680" height="1434" loading="lazy" decoding="async" alt="Onboarding, slide two: AI Categorization."></div></div></div>
+          <div class="walk__note"><span class="mono">06&ensp;Onboarding</span><h3>Three screens to set expectations</h3><p>One idea each: tracking that happens on its own, AI that sorts every purchase, and insights that tell you what to do next. Skip is always there.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTCOME -->
+    <section class="sec" data-view aria-labelledby="outcome">
+      <div class="finale">
+        <h2 class="display display--center" id="outcome" data-reveal><span>A working app,</span><span class="q">live on the web.</span></h2>
+        <p class="body" data-reveal style="--d:120">FlowLedger is built in React and deployed, so every screen here can be tapped through: the five tabs, onboarding, search and filters on the ledger, groups and activity in Split, and privacy mode. It’s laid out for a phone, so it’s best opened on one.</p>
+        <a class="cta" href="https://flowledger-ai.vercel.app/" target="_blank" rel="noopener" data-reveal style="--d:200">Open the live app&ensp;↗</a>
+      </div>
+    </section>
+
+    <nav class="st-end micro" aria-label="Projects">
+      <a class="u" href="../#projects">←&ensp;Back to projects</a>
+      <a class="u" href="#top" data-top>Back to top&ensp;↑</a>
+    </nav>
+  </main>
+
+  <script src="../../assets/js/site.js?v=91" defer></script>
+  <script src="../../assets/js/page.js?v=92" defer></script>
+  <script>
+    // "Back to top"
+    document.querySelector('[data-top]').addEventListener('click', (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); });
+  </script>
+</body>
+</html>
