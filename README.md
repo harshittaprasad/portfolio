@@ -199,3 +199,4 @@ browsers load the new file instead of a cached one.
 Any static host works (Vercel, Netlify, GitHub Pages). Links use folder URLs
 (`work/`, `about/`), which these hosts resolve to `index.html` automatically.
 # portfolio
+# portfolio
